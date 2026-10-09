@@ -41,7 +41,14 @@ Base : Gramophone, branche `beta`, commit du 2 octobre 2026 (dépôt amont ajout
 5. Score de skip et écran de suppression.
 6. Bouton « efface ce morceau » dans Android Auto.
 
-## Traduction : points à vérifier sur un appareil en français
+## Traduction : décisions
 
-- Libellés des autorisations système dans `grant_images`, `deny_images`, `grant_audio` : « Photos et vidéos » et « Musique et audio » sont mes traductions des libellés anglais ; à comparer avec ce qu'Android affiche réellement.
-- `layout/lyric_widget_preview.xml` contient cinq lignes d'exemple en anglais, non traduites (voir la décision en suspens).
+- Libellés des autorisations système (`grant_images`, `deny_images`, `grant_audio`) : « Photos et vidéos » et « Musique et audio », vérifiés sur appareil le 9 octobre 2026.
+- `layout/lyric_widget_preview.xml` : les cinq lignes d'exemple restent en anglais (décision de Frank, 9 octobre 2026).
+
+## Dépôt et organisation
+
+- Dépôt : https://github.com/FrankSAURET/Sillage (branche `main`).
+- L'amont Gramophone n'est pas inclus dans l'historique : le premier commit est un import de son état du 2 octobre 2026. Pour récupérer ses évolutions, ajouter un remote `upstream` et comparer.
+- `readme.md` d'origine est renommé `README_GRAMOPHONE.md` (collision de casse avec `README.md` sous Windows).
+- Après un clonage : `git submodule update --init --recursive`.
