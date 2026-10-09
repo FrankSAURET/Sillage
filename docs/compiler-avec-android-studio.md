@@ -42,7 +42,7 @@ Menu **Tools > SDK Manager** (ou l'icône de cube avec flèche).
 
 ## 4. Ouvrir le projet
 
-1. **File > Open**, sélectionner le dossier racine du dépôt (celui qui contient `settings.gradle.kts`), puis OK.
+1. **File > Open**, aller dans le dossier racine du dépôt et sélectionner le **fichier** `settings.gradle.kts`, puis OK. Si une question s'affiche, répondre **Open as Project**.
 2. Répondre **Trust Project** à la question de confiance.
 3. Android Studio lance la synchronisation Gradle (barre de progression en bas). La première fois, elle télécharge Gradle et toutes les dépendances : compter plusieurs minutes.
 4. Vérifier le JDK : **File > Settings > Build, Execution, Deployment > Build Tools > Gradle**, champ **Gradle JDK** = le JDK fourni avec Android Studio (« jbr-21 » ou plus récent). Le projet exige Java 21.
