@@ -281,8 +281,10 @@
     <string name="bitrate_unknown">Bitrate inconnu</string>
     <string name="settings_open_source_licenses">Licences open source</string>
     <string name="oh_no">Oh non !</string>
-    <string name="send_email">Envoyer un email</string>
-    <string name="send_email_manually">Veuillez envoyer le journal à nift4@posteo.net : aucune application de messagerie n’a été trouvée.</string>
+    <string name="send_email">Signaler sur GitHub</string>
+    <string name="send_email_manually">Veuillez envoyer le journal à frank.sauret.pro@gmail.com : aucune application de messagerie n’a été trouvée.</string>
+    <string name="crash_github_paste">Le journal complet est dans votre presse-papiers : collez-le ci-dessous à la place de cet extrait.</string>
+    <string name="crash_github_toast">Journal complet copié : collez-le dans le ticket GitHub</string>
     <string name="mix_port_flag_none">Aucun</string>
     <string name="audio_not_initialized">Le système de lecture audio n\'a pas été initialisé. Essaye de jouer quelque chose !</string>
     <string name="mix_port_flag_spatializer">Son spatial</string>
@@ -396,7 +398,7 @@
     <string name="spk_encoding_unknown">Format inconnu %s</string>
     <string name="spk_encoding_unknown_d">Format inconnu %d</string>
     <string name="crash_report">Rapport de plantage</string>
-    <string name="what_were_you_doing">Que faisiez-vous dans Sillage lorsque ce plantage s’est produit ? Ajoutez autant de détails que possible afin d’augmenter les chances que je puisse corriger le problème.\n\nVeuillez noter que l’anglais est préférable pour les rapports de bug, mais j’essaierai d’utiliser la traduction automatique si vous envoyez un rapport dans une autre langue.</string>
+    <string name="what_were_you_doing">Que faisiez-vous dans Sillage lorsque ce plantage s’est produit ? Ajoutez autant de détails que possible afin d’augmenter les chances que je puisse corriger le problème.\n\nUn ticket GitHub va s’ouvrir dans votre navigateur. Le journal complet est copié dans le presse-papiers : collez-le dans le ticket.</string>
     <string name="email_clipboard">Adresse e-mail et texte copiés dans le presse-papiers</string>
     <string name="settings_export_logs">Exporter les journaux de l’application</string>
     <string name="settings_audio_quality_info">Informations sur la qualité audio</string>

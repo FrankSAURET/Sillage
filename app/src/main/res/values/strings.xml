@@ -726,9 +726,11 @@
     <!-- Explainer of crash report screen -->
     <string name="gramophone_crashed_explainer2">Sillage crashed :(\n\nPlease send me a bug report so issues like what lead to this crash can be fixed!\n\nEach situation as unique as music, without your help it is likely this bug will <b>NOT</b> be fixed!</string>
     <!-- Positive action button in crash report screen -->
-    <string name="send_email">Send email</string>
+    <string name="send_email">Report on GitHub</string>
     <!-- Error message if sending crash report failed -->
-    <string name="send_email_manually">Please send log to nift4@posteo.net - can\'t find mail app</string>
+    <string name="send_email_manually">Please send the log to frank.sauret.pro@gmail.com - can\'t find mail app</string>
+    <string name="crash_github_paste">The full log is in your clipboard: please paste it below, replacing this excerpt.</string>
+    <string name="crash_github_toast">Full log copied: paste it into the GitHub issue</string>
     <!-- Error message if lyrics were found but are corrupted or in unsupported format -->
     <string name="failed_to_parse_lyric">Failed to parse lyrics</string>
     <!-- Title of dialog which shows playback path (formats, sample rates, devices, changes in those). -->
@@ -1008,7 +1010,7 @@
     <!-- Dialog title in crash reporter screen when user pressed "Send email" and we're asking for details -->
     <string name="crash_report">Crash report</string>
     <!-- Dialog explainer in crash reporter screen when user pressed "Send email" and we're asking for details -->
-    <string name="what_were_you_doing">What were you doing in Sillage when this crash happened? Please add as many details as possible to increase the chances of me being able to fix the problem.\n\nPlease note that English is preferred for bug reports, but I will try to use machine translation if you send bug reports in another language.</string>
+    <string name="what_were_you_doing">What were you doing in Sillage when this crash happened? Please add as many details as possible to increase the chances of me being able to fix the problem.\n\nA GitHub issue will open in your browser. The full log is copied to the clipboard: paste it into the issue.</string>
     <!-- Used if no email program is installed -->
     <string name="email_clipboard">Copied e-mail address and text to clipboard</string>
     <!-- Settings item to create .txt file with app logs, used for diagnosing issues -->

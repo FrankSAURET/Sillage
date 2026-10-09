@@ -200,6 +200,30 @@ class BugHandlerActivity : BaseActivity() {
         }
     }
 
+    /** Ouvre un nouveau ticket GitHub pré-rempli ; renvoie false si aucun navigateur n'est disponible. */
+    private fun openGitHubIssue(desc: String?, fullText: String): Boolean {
+        val clipboard: ClipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+        allowDiskAccessInStrictMode {
+            clipboard.setPrimaryClip(ClipData.newPlainText("crash report", fullText))
+        }
+        val title = "Plantage ${BuildConfig.MY_VERSION_NAME}" +
+                (desc?.lineSequence()?.first()?.take(60)?.let { " : $it" } ?: "")
+        // GitHub refuse les adresses trop longues : extrait seulement, journal complet à coller
+        val body = getString(R.string.crash_github_paste) + "\n\n```\n" +
+                fullText.take(CRASH_URL_EXCERPT) + "\n```"
+        val uri = CRASH_ISSUES_URL.toUri().buildUpon()
+            .appendQueryParameter("title", title)
+            .appendQueryParameter("body", body)
+            .build()
+        return try {
+            startActivity(Intent(Intent.ACTION_VIEW, uri))
+            Toast.makeText(this, R.string.crash_github_toast, Toast.LENGTH_LONG).show()
+            true
+        } catch (_: ActivityNotFoundException) {
+            false
+        }
+    }
+
     private fun sendEmail() {
         Log.w("Gramophone", "Exporting logs due to crash...")
         val policy = StrictMode.allowThreadDiskWrites()
@@ -221,10 +245,13 @@ class BugHandlerActivity : BaseActivity() {
                     R.id.editText
                 ) as TextInputEditText
                 val desc = et.editableText.toString().takeIf { it.isNotBlank() }
-                val mailText = "Hi Nick,\n\nGramophone crashed!\nI was doing:\n\n" +
-                        "${desc ?: "--INSERT DESCRIPTION HERE--"}\n\nIt crashed with this" +
-                        " log:\n\n\n$log"
+                val mailText = "Sillage a planté.\nJe faisais :\n\n" +
+                        "${desc ?: "--DÉCRIRE ICI--"}\n\nJournal du plantage :\n\n\n$log"
                 triedToSendEmail = true
+                // Sillage : le rapport devient un ticket GitHub du projet, ouvert dans le
+                // navigateur (l'application elle-même n'a pas accès à internet). Le journal
+                // complet est copié dans le presse-papiers ; l'adresse de l'URL en porte un extrait.
+                if (openGitHubIssue(desc, mailText)) return@setPositiveButton
                 CoroutineScope(Dispatchers.IO).launch {
                     crashLogDir.mkdirs()
                     f.writeText(mailText)
@@ -252,11 +279,11 @@ class BugHandlerActivity : BaseActivity() {
                         try {
                             startActivity(Intent(Intent.ACTION_SEND).apply {
                                 selector =
-                                    Intent(Intent.ACTION_SENDTO).apply { setData("mailto:nift4@posteo.net".toUri()) }
-                                putExtra(Intent.EXTRA_EMAIL, arrayOf("nift4@posteo.net"))
+                                    Intent(Intent.ACTION_SENDTO).apply { setData("mailto:$CRASH_EMAIL".toUri()) }
+                                putExtra(Intent.EXTRA_EMAIL, arrayOf(CRASH_EMAIL))
                                 putExtra(
                                     Intent.EXTRA_SUBJECT,
-                                    "Gramophone ${BuildConfig.MY_VERSION_NAME} crashed"
+                                    "Sillage ${BuildConfig.MY_VERSION_NAME} : plantage"
                                 )
                                 putExtra(Intent.EXTRA_TEXT, mailText)
                                 putExtra(
@@ -279,7 +306,7 @@ class BugHandlerActivity : BaseActivity() {
                                 getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
                             val clip = ClipData.newPlainText(
                                 "email text",
-                                "nift4@posteo.net\n\n\n$mailText"
+                                "$CRASH_EMAIL\n\n\n$mailText"
                             )
                             allowDiskAccessInStrictMode {
                                 clipboard.setPrimaryClip(clip)
@@ -346,5 +373,12 @@ class BugHandlerActivity : BaseActivity() {
         if (shouldSendEmail && !triedToSendEmail)
             copyToClipboard()
         super.onStop()
+    }
+
+    private companion object {
+        // Destinations des rapports de plantage de Sillage
+        const val CRASH_ISSUES_URL = "https://github.com/FrankSAURET/Sillage/issues/new"
+        const val CRASH_EMAIL = "frank.sauret.pro@gmail.com"
+        const val CRASH_URL_EXCERPT = 3000
     }
 }
