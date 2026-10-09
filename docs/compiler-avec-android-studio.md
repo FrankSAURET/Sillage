@@ -51,6 +51,7 @@ Si la synchronisation échoue, lire la première erreur dans l'onglet **Build** 
 
 - « SDK location not found » : rouvrir le projet, Android Studio crée `local.properties` tout seul ; sinon le créer avec `sdk.dir=C\:\\Users\\VOUS\\AppData\\Local\\Android\\Sdk`.
 - « package.properties (Le fichier spécifié est introuvable) » : étape 2.
+- « NDK not configured » qui persiste après installation : `media3` est une construction incluse qui cherche le SDK de son côté (son propre `local.properties`, sinon la variable `ANDROID_HOME`). Copier `local.properties` de la racine dans `media3/` (fichier ignoré par git), vérifier que `ANDROID_HOME` et `ANDROID_SDK_ROOT` sont absentes ou pointent vers le même SDK, puis fermer et rouvrir Android Studio.
 - Erreur sur `media3` introuvable : sous-module non initialisé, étape 2.
 - « NDK not configured … Preferred NDK version is 'X' » ou « CMake 3.22.1 not found » : installer exactement la version citée (étape 3), puis **File > Sync Project with Gradle Files**.
 
