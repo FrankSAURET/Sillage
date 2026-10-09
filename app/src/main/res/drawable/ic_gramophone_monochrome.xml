@@ -1,14 +1,42 @@
+<!-- Icône monochrome Sillage (notifications, Android Auto) : même dessin que l’icône d’application, recadré. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
-    android:viewportWidth="2400"
-    android:viewportHeight="2400">
-  <path
-      android:pathData="m1139.1,670.3c-120.6,0 -218.2,55.1 -218.2,122.9 0,67.8 97.6,122.9 218.2,122.9 120.6,0 218.2,-55.1 218.2,-122.9 0,-67.8 -98.8,-122.9 -218.2,-122.9z"
-      android:strokeWidth="11.4832"
-      android:fillColor="#ffffff"/>
-  <path
-      android:pathData="M2356.4,827.7 L1243.6,183.5c-27.6,-16.1 -60.9,-16.1 -87.3,0L43.6,826.5C16.1,842.6 0,872.5 0,903.5v593.7c0,31 17.2,60.9 43.6,75.8l1112.7,643.1c27.6,16.1 60.9,16.1 87.3,0l1112.7,-643.1C2383.9,1556.9 2400,1528.1 2400,1497.1L2400,903.5c0,-31 -17.2,-60.9 -43.6,-75.8zM1139.1,1118.2c-316.9,0 -574.2,-145.8 -574.2,-323.8 0,-178 257.2,-323.8 574.2,-323.8 316.9,0 574.2,145.8 574.2,323.8 0,178 -257.2,323.8 -574.2,323.8zM2072.7,927.6 L1443.4,1295c-5.7,3.4 -12.6,5.7 -19.5,5.7h-181.4c-21.8,0 -39,-17.2 -39,-39 0,-21.8 17.2,-39 39,-39h171.1l562.7,-328.4 -68.9,-40.2c-18.4,-10.3 -25.3,-34.5 -13.8,-52.8 10.3,-18.4 34.5,-25.3 52.8,-13.8l127.5,73.5c12.6,6.9 19.5,19.5 19.5,33.3 0,13.8 -8,26.4 -20.7,33.3z"
-      android:strokeWidth="11.4832"
-      android:fillColor="#ffffff"/>
+    android:viewportWidth="60"
+    android:viewportHeight="60">
+    <group
+        android:translateX="-25.5"
+        android:translateY="-25">
+        <!-- Sillage -->
+        <path
+            android:pathData="M57,59 Q51,52 45,54 T33,50 T27,48"
+            android:strokeColor="#FFFFFF"
+            android:strokeWidth="4"
+            android:strokeLineCap="round" />
+        <path
+            android:pathData="M57,67 Q51,74 45,72 T35,75 T31,76"
+            android:strokeColor="#FFFFFF"
+            android:strokeWidth="4"
+            android:strokeLineCap="round" />
+        <path
+            android:pathData="M47,63 Q43,60 39,63 T31,63"
+            android:strokeColor="#FFFFFF"
+            android:strokeWidth="4"
+            android:strokeLineCap="round" />
+        <!-- Croche : tête, hampe, crochet -->
+        <group
+            android:pivotX="64"
+            android:pivotY="63"
+            android:rotation="-22">
+            <path
+                android:fillColor="#FFFFFF"
+                android:pathData="M56,63 a8,6 0 1,0 16,0 a8,6 0 1,0 -16,0z" />
+        </group>
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M68.6,32 h3.2 v29 h-3.2z" />
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M71.8,32 c7,3 11,8 9,16 c-2,-5 -5,-7 -9,-8z" />
+    </group>
 </vector>

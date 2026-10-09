@@ -199,7 +199,7 @@
     <string name="spk_encoding_aac_eld">AAC-ELD</string>
     <string name="spk_encoding_ac4">AC-4</string>
     <string name="spk_encoding_dts">DTS</string>
-    <string name="open_in_gramophone">Ouvrir dans Gramophone</string>
+    <string name="open_in_gramophone">Ouvrir dans Sillage</string>
     <string name="delete_really">Voulez-vous réellement supprimer \"%s\" ? Cette action est irréversible.</string>
     <string name="spk_channel_out_mono">Mono</string>
     <string name="spk_channel_out_stereo">Stéréo</string>
@@ -233,7 +233,7 @@
     <string name="device_type_line_digital">Ligne digitale</string>
     <string name="cannot_play_file">Impossible de jouer ce fichier</string>
     <string name="settings_lyrics_no_animation">Désactiver les animations</string>
-    <string name="package_type_explainer">Les APKs de Gramophone peuvent être créés par tout le monde, car Gramophone est open source. Pour vous aider à vous souvenir d\'où provient un APK, Gramophone indique le type de paquet.\n\nLe type le plus courant est Release, qui est obtenu depuis F-Droid, Google Play, GitHub ou IzzyOnDroid.\nLe type de paquet CI fait référence aux builds automatisés effectués pour chaque commit sur GitHub. Ces builds peuvent être instables.\nPour les autres types de paquets, le nom devrait donner une indication raisonnable de la provenance de l\'APK.</string>
+    <string name="package_type_explainer">Les APK de Sillage peuvent être créés par tout le monde, car Sillage est open source. Pour vous aider à vous souvenir d\'où provient un APK, Sillage indique le type de paquet.\n\nLe type le plus courant est Release, qui est obtenu depuis F-Droid, Google Play, GitHub ou IzzyOnDroid.\nLe type de paquet CI fait référence aux builds automatisés effectués pour chaque commit sur GitHub. Ces builds peuvent être instables.\nPour les autres types de paquets, le nom devrait donner une indication raisonnable de la provenance de l\'APK.</string>
     <string name="spk_encoding_aac_xhe">xHE-AAC</string>
     <string name="settings_trim_lyrics_summary">Les espaces avant la première lettre ou après la fin d’une ligne de paroles peuvent avoir une valeur artistique. Si vous n’êtes pas de cet avis, activez cette option pour les supprimer automatiquement.</string>
     <string name="device_type_dock">Station d\'accueil</string>
@@ -287,7 +287,7 @@
     <string name="audio_not_initialized">Le système de lecture audio n\'a pas été initialisé. Essaye de jouer quelque chose !</string>
     <string name="mix_port_flag_spatializer">Son spatial</string>
     <string name="mix_port_flag_ultrasound">Ultrason</string>
-    <string name="gramophone_crashed_explainer2">Gramophone a crashé :(\n\nMerci de m\'envoyer un rapport de bug pour que les problèmes comme celui qui a conduit à ce crash puissent être résolu !\n\nChaque situation est aussi unique que la musique, sans votre aide il est probable que ce bug ne sera <b>PAS</b> résolu !</string>
+    <string name="gramophone_crashed_explainer2">Sillage a crashé :(\n\nMerci de m\'envoyer un rapport de bug pour que les problèmes comme celui qui a conduit à ce crash puissent être résolu !\n\nChaque situation est aussi unique que la musique, sans votre aide il est probable que ce bug ne sera <b>PAS</b> résolu !</string>
     <string name="spk_encoding_opus">Opus</string>
     <string name="audio_signal_chain">Chaîne son spatial</string>
     <string name="settings_lyrics_no_animation_summary">Désactiver toutes les animations de transition entre les lignes de paroles</string>
@@ -302,7 +302,7 @@
     <string name="spk_encoding_amr_nb">AMR-NB</string>
     <string name="spk_encoding_evrc">EVRC</string>
     <string name="spk_encoding_evrcb">EVRC-B</string>
-    <string name="app_name">Gramophone</string>
+    <string name="app_name">Sillage</string>
     <plurals name="folders_plural">
         <item quantity="one">%d dossier</item>
         <item quantity="many">%d dossiers</item>
@@ -396,7 +396,7 @@
     <string name="spk_encoding_unknown">Format inconnu %s</string>
     <string name="spk_encoding_unknown_d">Format inconnu %d</string>
     <string name="crash_report">Rapport de plantage</string>
-    <string name="what_were_you_doing">Que faisiez-vous dans Gramophone lorsque ce plantage s’est produit ? Ajoutez autant de détails que possible afin d’augmenter les chances que je puisse corriger le problème.\n\nVeuillez noter que l’anglais est préférable pour les rapports de bug, mais j’essaierai d’utiliser la traduction automatique si vous envoyez un rapport dans une autre langue.</string>
+    <string name="what_were_you_doing">Que faisiez-vous dans Sillage lorsque ce plantage s’est produit ? Ajoutez autant de détails que possible afin d’augmenter les chances que je puisse corriger le problème.\n\nVeuillez noter que l’anglais est préférable pour les rapports de bug, mais j’essaierai d’utiliser la traduction automatique si vous envoyez un rapport dans une autre langue.</string>
     <string name="email_clipboard">Adresse e-mail et texte copiés dans le presse-papiers</string>
     <string name="settings_export_logs">Exporter les journaux de l’application</string>
     <string name="settings_audio_quality_info">Informations sur la qualité audio</string>
@@ -415,7 +415,7 @@
     <string name="refreshing_wait">Actualisation en cours, veuillez patienter…</string>
     <string name="still_refreshing">Actualisation, étape %1$d/%2$d : %3$s</string>
     <string name="did_you_know">Le saviez-vous…</string>
-    <string name="refresh_did_you_know">Gramophone demande une liste de chansons à jour à chaque démarrage de l’application et, tant qu’il fonctionne, détecte également automatiquement les nouveaux médias. Le bouton « Actualiser » ne recharge pas les médias dans Gramophone : il demande au système de réanalyser tous les fichiers de tous les périphériques de stockage permanents connectés, ce qui explique que l’opération prenne un certain temps. Ainsi, sauf dysfonctionnement du système ou d’autres applications, vous n’aurez jamais besoin d’utiliser cette fonctionnalité.\n\nDes chansons sont manquantes ? Vérifiez dans « Paramètres &gt; Comportement » le filtre de durée minimale et la liste d’exclusion des dossiers, et assurez-vous que ces paramètres ont les valeurs attendues. Pour connaître d’autres causes possibles, consultez notre FAQ.</string>
+    <string name="refresh_did_you_know">Sillage demande une liste de chansons à jour à chaque démarrage de l’application et, tant qu’il fonctionne, détecte également automatiquement les nouveaux médias. Le bouton « Actualiser » ne recharge pas les médias dans Sillage : il demande au système de réanalyser tous les fichiers de tous les périphériques de stockage permanents connectés, ce qui explique que l’opération prenne un certain temps. Ainsi, sauf dysfonctionnement du système ou d’autres applications, vous n’aurez jamais besoin d’utiliser cette fonctionnalité.\n\nDes chansons sont manquantes ? Vérifiez dans « Paramètres &gt; Comportement » le filtre de durée minimale et la liste d’exclusion des dossiers, et assurez-vous que ces paramètres ont les valeurs attendues. Pour connaître d’autres causes possibles, consultez notre FAQ.</string>
     <string name="rename_failed_playlist">Échec du renommage de la liste de lecture : %s</string>
     <string name="playlist_name">Nom de la liste de lecture</string>
     <string name="create_failed_playlist">Échec de la création de la liste de lecture : %s</string>
@@ -443,6 +443,7 @@
     <string name="offload_enabled_if_gapless">Activé si la lecture sans interruption est possible</string>
     <string name="settings_audio_offload">Offload audio (économise la batterie)</string>
     <string name="settings_telegram">Telegram</string>
+    <string name="settings_based_on_gramophone">Dérivé de Gramophone</string>
     <string name="spk_encoding_pcm_20bit">PCM 20 bits</string>
     <string name="spk_encoding_pcm_20bit_big_endian">PCM 20 bits (gros-boutiste)</string>
     <string name="settings_cookie_summary">Donner à la pochette d’album une forme de cookie</string>

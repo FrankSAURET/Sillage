@@ -63,22 +63,23 @@
 
         <org.akanework.gramophone.ui.components.NoAppFallbackPreference
             android:layout="@layout/preference_basic"
-            android:summary="https://github.com/FoedusProgramme/Gramophone"
+            android:summary="https://github.com/FrankSAURET/Sillage"
             android:title="@string/settings_repository"
             app:iconSpaceReserved="false">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://github.com/FoedusProgramme/Gramophone" />
+                android:data="https://github.com/FrankSAURET/Sillage" />
         </org.akanework.gramophone.ui.components.NoAppFallbackPreference>
 
         <org.akanework.gramophone.ui.components.NoAppFallbackPreference
             android:layout="@layout/preference_basic"
-            android:summary="@string/check_for_updates"
-            android:title="@string/settings_telegram"
+            android:summary="https://github.com/FoedusProgramme/Gramophone"
+            android:title="@string/settings_based_on_gramophone"
             app:iconSpaceReserved="false">
+            <!-- Sillage dérive de Gramophone (GPL-3.0) : lien vers le projet d'origine. -->
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://t.me/FoedusProgramme" />
+                android:data="https://github.com/FoedusProgramme/Gramophone" />
         </org.akanework.gramophone.ui.components.NoAppFallbackPreference>
 
     </PreferenceCategory>

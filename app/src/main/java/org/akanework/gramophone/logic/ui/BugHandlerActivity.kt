@@ -172,7 +172,7 @@ class BugHandlerActivity : BaseActivity() {
         actionShare.setOnClickListener {
             val sendIntent = Intent().apply {
                 action = Intent.ACTION_SEND
-                putExtra(Intent.EXTRA_TITLE, "Gramophone Logs")
+                putExtra(Intent.EXTRA_TITLE, "Sillage Logs")
                 putExtra(Intent.EXTRA_TEXT, bugText.text)
                 type = "text/plain"
             }

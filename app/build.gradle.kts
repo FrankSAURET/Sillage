@@ -101,11 +101,12 @@ android {
     }
 
     defaultConfig {
-        applicationId = appIdOverride ?: "org.akanework.gramophone"
+        // Identifiant propre à Sillage ; l'espace de noms du code reste celui de Gramophone.
+        applicationId = appIdOverride ?: "io.github.franksauret.sillage"
         minSdk = 23
         targetSdk = 37
-        versionCode = 24
-        versionName = "1.1.2"
+        versionCode = 25
+        versionName = "2026.10.0"
         if (releaseType != "Release" || vnos != null) {
             // by default the git commit hash is appended for non-release builds, however overrides
             // will apply unconditionally
