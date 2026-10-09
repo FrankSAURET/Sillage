@@ -35,7 +35,7 @@ Menu **Tools > SDK Manager** (ou l'icône de cube avec flèche).
 1. Onglet **SDK Platforms** : cocher **Android API 37** (le projet compile avec `compileSdk = 37`).
 2. Onglet **SDK Tools**, cocher « Show Package Details » en bas à droite, puis :
    - **Android SDK Build-Tools** : la dernière version ;
-   - **NDK (Side by side)** : la dernière version (le module `hificore` contient du C++) ;
+   - **NDK (Side by side)** : déplier et cocher la version **28.2.13676358** exactement, celle qu'attend Gradle (`media3` et `hificore` contiennent du C++) ;
    - **CMake** : la version **3.22.1** ;
    - **Android Auto Desktop Head Unit Emulator** : pour tester Android Auto sur le PC (étape 7).
 3. Appliquer, accepter les licences, attendre la fin des téléchargements.
@@ -52,7 +52,7 @@ Si la synchronisation échoue, lire la première erreur dans l'onglet **Build** 
 - « SDK location not found » : rouvrir le projet, Android Studio crée `local.properties` tout seul ; sinon le créer avec `sdk.dir=C\:\\Users\\VOUS\\AppData\\Local\\Android\\Sdk`.
 - « package.properties (Le fichier spécifié est introuvable) » : étape 2.
 - Erreur sur `media3` introuvable : sous-module non initialisé, étape 2.
-- « NDK not configured » ou « CMake 3.22.1 not found » : étape 3.
+- « NDK not configured … Preferred NDK version is 'X' » ou « CMake 3.22.1 not found » : installer exactement la version citée (étape 3), puis **File > Sync Project with Gradle Files**.
 
 ## 5. Compiler
 
