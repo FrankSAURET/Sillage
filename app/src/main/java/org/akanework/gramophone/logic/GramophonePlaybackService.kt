@@ -654,8 +654,10 @@ class GramophonePlaybackService : MediaLibraryService(), MediaSessionService.Lis
                             handler.post { endedWorkaroundPlayer?.prepare() }
                         }
                     }
-                } else
+                } else {
                     lastPlaylistLoaded.complete(Unit)
+                    startPerpetualShuffle()
+                }
             }
         }
         scope.launch(Dispatchers.Default) {
@@ -1663,6 +1665,30 @@ class GramophonePlaybackService : MediaLibraryService(), MediaSessionService.Lis
                         it.exoPlayer.mediaItemCount,
                         Random.nextLong()
                     )
+                )
+            }
+        }
+    }
+
+    /**
+     * Sillage : sans file d'attente sauvegardée (premier lancement), prépare tous les morceaux
+     * en aléatoire avec « répéter tout ». La file est alors re-mélangée à chaque tour
+     * (voir onMediaItemTransition), d'où un aléatoire perpétuel. Ne lance pas la lecture.
+     */
+    private fun startPerpetualShuffle() {
+        scope.launch(Dispatchers.Default) {
+            // attend que la bibliothèque soit lue (autorisation accordée, au moins un morceau)
+            val songs = gramophoneApplication.reader.songListFlow.first { it.isNotEmpty() }
+            val list = mapMediaItemsForFavorites(songs)
+            withContext(Dispatchers.Main) {
+                val player = endedWorkaroundPlayer ?: return@withContext
+                // l'utilisateur a pu lancer autre chose entre-temps : on ne l'écrase pas
+                if (mediaSession == null || !player.currentTimeline.isEmpty) return@withContext
+                player.setMediaItems(
+                    list, C.INDEX_UNSET, C.TIME_UNSET, getString(R.string.shuffle_all),
+                    pinned = false, original = true, ended = false,
+                    repeatMode = Player.REPEAT_MODE_ALL, shuffleModeEnabled = true,
+                    newShuffleOrder = null, playbackParameters = null,
                 )
             }
         }

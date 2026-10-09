@@ -62,6 +62,7 @@ import androidx.fragment.app.commit
 import androidx.lifecycle.lifecycleScope
 import androidx.media3.common.C
 import androidx.media3.common.MediaItem
+import androidx.media3.common.Player
 import androidx.media3.common.util.Log
 import androidx.media3.session.DefaultMediaNotificationProvider
 import coil3.imageLoader
@@ -687,6 +688,8 @@ class MainActivity : BaseActivity() {
             willAutoPlayLater = true
             controllerViewModel.addControllerCallback(lifecycle) { controller, _ ->
                 controller.shuffleModeEnabled = true
+                // Sillage : « tout en aléatoire » est perpétuel (re-mélange à chaque tour)
+                controller.repeatMode = Player.REPEAT_MODE_ALL
                 controller.setMediaItem(
                     MediaItem.Builder()
                         .setRequestMetadata(
