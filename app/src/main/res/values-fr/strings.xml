@@ -126,8 +126,8 @@
     <string name="settings_play_on_launch_summary">Lancer la musique au démarrage</string>
     <string name="settings_play_on_launch">Lire au démarrage</string>
     <string name="settings_blacklist">Liste d\'exclusion</string>
-    <string name="settings_blacklist_folder">Exclure des dossiers</string>
-    <string name="settings_blacklist_folder_summary">Filtre les morceaux de certains dossiers</string>
+    <string name="settings_blacklist_folder">Dossiers de musique</string>
+    <string name="settings_blacklist_folder_summary">Choisissez le dossier racine de votre musique ou excluez des dossiers</string>
     <string name="delete_failed">Échec de la suppression du morceau : %s</string>
     <string name="settings_crash_application">Faire planter l\'application</string>
     <string name="album_cover">Pochette d\'album</string>
@@ -489,8 +489,8 @@
     <string name="favorite_failed_title">Impossible de modifier le statut de favori du morceau</string>
     <string name="favorite_failed_text">Appuyez ici pour appliquer les modifications en accordant l’autorisation d’accès au fichier de la liste Favoris</string>
     <string name="error_in_bg">Erreurs survenant en arrière-plan</string>
-    <string name="settings_whitelist">Liste d’autorisation</string>
-    <string name="whitelist_and_blacklist">Si aucun dossier n’est sélectionné dans la liste d’autorisation, tous les dossiers seront autorisés.\n\nLa liste d’autorisation et la liste d’exclusion sont appliquées ensemble, la liste d’exclusion étant prioritaire. Par exemple, vous pouvez autoriser un dossier dans la liste d’autorisation tout en excluant l’un de ses sous-dossiers dans la liste d’exclusion.</string>
+    <string name="settings_whitelist">Dossiers racines</string>
+    <string name="whitelist_and_blacklist">Cochez ici le dossier racine de votre musique : seuls les morceaux qu’il contient, sous-dossiers compris, seront affichés. Si aucun dossier n’est coché, tous les dossiers sont autorisés.\n\nLes exclusions s’appliquent en plus : vous pouvez autoriser un dossier racine et en exclure un sous-dossier.</string>
     <string name="discard_changes_title">Abandonner les modifications ?</string>
     <string name="save">Enregistrer</string>
     <string name="discard">Abandonner</string>

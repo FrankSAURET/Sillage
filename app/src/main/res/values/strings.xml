@@ -276,9 +276,9 @@
     <!-- Window title of submenu in behavior settings to exclude songs that are in specific folders -->
     <string name="settings_blacklist">Blacklist</string>
     <!-- Toggle in behavior settings to exclude songs that are in specific folders. Subtext -->
-    <string name="settings_blacklist_folder_summary">Filter songs from certain folders</string>
+    <string name="settings_blacklist_folder_summary">Choose the root folder of your music, or exclude folders</string>
     <!-- Toggle in behavior settings to exclude songs that are in specific folders. Title -->
-    <string name="settings_blacklist_folder">Blacklist folders</string>
+    <string name="settings_blacklist_folder">Music folders</string>
     <!-- Used in about screen to show basic info about app (version, APK source, etc) -->
     <string name="settings_category_basic_info">Basic info</string>
     <!-- Settings category label for misc -->
@@ -1218,9 +1218,9 @@
     <!-- Notification channel for errors while the app is closed -->
     <string name="error_in_bg">Errors occurring in the background</string>
     <!-- Tab in blacklist menu in behavior settings for configuring whitelist -->
-    <string name="settings_whitelist">Whitelist</string>
+    <string name="settings_whitelist">Root folders</string>
     <!-- Explaining how whitelist and blacklist interact as info box to the user -->
-    <string name="whitelist_and_blacklist">If no folders are selected in the Whitelist, all folders will be allowed.\n\nWhitelist and Blacklist are applied together, with Blacklist taking priority. For example, you can allow a folder in the Whitelist while excluding one of its subfolders in the Blacklist.</string>
+    <string name="whitelist_and_blacklist">Select the root folder of your music here: only songs inside it, subfolders included, will be shown. If no folder is selected, all folders are allowed.\n\nExclusions apply on top: you can allow a root folder and exclude one of its subfolders.</string>
     <!-- Ask the user if they really want to delete the changes they made in the playlist editor and
     restore playlist to state before they started editing. Dialog title -->
     <string name="discard_changes_title">Discard changes?</string>
