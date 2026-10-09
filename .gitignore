@@ -10,3 +10,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Instructions personnelles locales (non versionnées)
+CLAUDE.local.md
