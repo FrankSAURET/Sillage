@@ -28,18 +28,23 @@ Base : Gramophone, branche `beta`, commit du 2 octobre 2026 (dépôt amont ajout
 
 - Service principal : `app/src/main/java/org/akanework/gramophone/logic/GramophonePlaybackService.kt` (environ 2 000 lignes).
 - Media3 est un sous-module Git (fork) : `git submodule update --init --recursive` avant de compiler.
-- Bibliothèque lue via MediaStore avec liste noire de dossiers ; il manque un filtre « dossier racine ».
+- Bibliothèque lue via MediaStore avec liste noire et liste blanche de dossiers ; la liste blanche (sous-dossiers inclus) sert de filtre « dossier racine ».
 - Aucune base de données locale : le score de skip demandera un stockage à créer.
 - Compilation non vérifiée à ce jour : le SDK Android n'est pas téléchargeable depuis l'espace de travail cloud.
 
 ## Feuille de route
 
 1. [fait] Traduction française intégrale (chaînes, fiche de l'application, notes de version).
-2. Renommage de l'application en Sillage (nom, identifiant, icône).
-3. Filtre sur un dossier racine.
-4. Aléatoire perpétuel par défaut.
+2. [fait] Renommage de l'application en Sillage (nom, identifiant `io.github.franksauret.sillage`, icône provisoire).
+3. [fait] Filtre sur un dossier racine (liste blanche existante, renommée « Dossiers racines »).
+4. [fait] Aléatoire perpétuel par défaut.
 5. Score de skip et écran de suppression.
 6. Bouton « efface ce morceau » dans Android Auto.
+
+## Identité : décisions
+
+- Identifiant d'application : `io.github.franksauret.sillage` (choix par défaut, 9 octobre 2026). L'espace de noms Kotlin `org.akanework.gramophone` est conservé pour faciliter la reprise des évolutions amont.
+- Version : `versionName` 2026.10.0, `versionCode` 25 (suite de Gramophone 24).
 
 ## Traduction : décisions
 
