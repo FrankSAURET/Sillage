@@ -1,0 +1,10 @@
+- Modification des listes de lecture
+- Morceaux favoris
+- Nouvelle interface des paroles, avec paroles synchronisées mot par mot (et lecture des paroles ID3 SYLT)
+- Prise en charge de ReplayGain 2.0
+- Thème sombre pur
+- Liste blanche de dossiers
+- Décodeur ALAC
+- Vitesse de lecture
+- File d’attente et minuteur de mise en veille repensés
+- Nombreuses corrections de plantages et de bugs

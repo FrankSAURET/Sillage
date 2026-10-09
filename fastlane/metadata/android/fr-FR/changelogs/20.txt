@@ -1,0 +1,8 @@
+- Le bouton d’actualisation actualise désormais MediaStore
+- Suppression des restrictions sur les formats d’échantillonnage audio
+- Boîte de dialogue d’aperçu audio améliorée
+- Actualisation suspendue lorsque l’application est en arrière-plan, pour économiser la batterie
+- Prévention des blocages (ANR)
+- Correction de la page « artiste de l’album »
+- Correction de plusieurs fuites de mémoire
+- Nombreuses corrections de plantages et de bugs
