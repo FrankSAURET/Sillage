@@ -74,10 +74,11 @@ Sans téléphone, **Tools > Device Manager** permet de créer un émulateur (pre
 
 ## 7. Tester Android Auto sur le PC
 
-1. Sur le téléphone, ouvrir les réglages d'Android Auto, toucher 10 fois la ligne **Version** pour activer le mode développeur.
-2. Menu à trois points > **Paramètres pour les développeurs** : activer **Sources inconnues** (sinon une application non installée depuis le Play Store n'apparaît pas).
-3. Même menu > **Démarrer le serveur de l'unité principale**.
-4. Sur le PC, dans un terminal :
+1. Sur le téléphone, ouvrir les réglages d'Android Auto. Sur Android 10 et plus, Android Auto est intégré au système et n'a pas d'icône : passer par **Paramètres**, puis la loupe de recherche, et taper « Android Auto » (selon la marque : **Appareils connectés > Préférences de connexion > Android Auto**, ou **Appareils connectés > Android Auto** chez Samsung). Si rien n'apparaît, installer « Android Auto » depuis le Play Store.
+2. Tout en bas de ces réglages, toucher une dizaine de fois la ligne **Version**, puis accepter l'activation du mode développeur.
+3. Menu à trois points en haut à droite > **Paramètres pour les développeurs** : activer **Sources inconnues** (sinon une application non installée depuis le Play Store n'apparaît pas).
+4. Même menu à trois points > **Démarrer le serveur de l'unité principale**.
+5. Téléphone branché en USB, sur le PC, dans un terminal :
 
 ```bash
 adb forward tcp:5277 tcp:5277
