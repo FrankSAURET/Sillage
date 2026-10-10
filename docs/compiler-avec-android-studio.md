@@ -78,14 +78,15 @@ Sans téléphone, **Tools > Device Manager** permet de créer un émulateur (pre
 2. Tout en bas de ces réglages, toucher une dizaine de fois la ligne **Version**, puis accepter l'activation du mode développeur.
 3. Menu à trois points en haut à droite > **Paramètres pour les développeurs** : activer **Sources inconnues** (sinon une application non installée depuis le Play Store n'apparaît pas).
 4. Même menu à trois points > **Démarrer le serveur de l'unité principale**.
-5. Téléphone branché en USB, sur le PC, dans un terminal :
+5. Téléphone branché en USB, sur le PC, dans PowerShell (`adb` n'est pas dans le PATH par défaut, d'où les chemins complets) :
 
-```bash
-adb forward tcp:5277 tcp:5277
-"%LOCALAPPDATA%\Android\Sdk\extras\google\auto\desktop-head-unit.exe"
+```powershell
+$sdk = "$env:LOCALAPPDATA\Android\Sdk"
+& "$sdk\platform-tools\adb.exe" forward tcp:5277 tcp:5277
+& "$sdk\extras\google\auto\desktop-head-unit.exe"
 ```
 
-(La deuxième ligne vaut pour l'invite de commandes `cmd` ; dans PowerShell : `& "$env:LOCALAPPDATA\Android\Sdk\extras\google\auto\desktop-head-unit.exe"`.)
+Pour taper simplement `adb` à l'avenir : Paramètres Windows > « Modifier les variables d'environnement pour votre compte » > `Path` > Nouveau > `%LOCALAPPDATA%\Android\Sdk\platform-tools`, puis rouvrir PowerShell.
 
 Une fenêtre simule l'écran de la voiture ; Sillage apparaît dans la liste des applications multimédia.
 
