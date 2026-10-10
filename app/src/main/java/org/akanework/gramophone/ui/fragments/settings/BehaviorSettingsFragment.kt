@@ -28,6 +28,9 @@ import org.akanework.gramophone.R
 import org.akanework.gramophone.logic.hasImagePermission
 import org.akanework.gramophone.logic.hasScopedStorageWithMediaTypes
 import org.akanework.gramophone.logic.utils.Flags
+import org.akanework.gramophone.logic.utils.SkipScores
+import org.akanework.gramophone.ui.MainActivity
+import org.akanework.gramophone.ui.SkipReview
 import org.akanework.gramophone.ui.fragments.BasePreferenceFragment
 import org.akanework.gramophone.ui.fragments.BaseSettingsActivity
 
@@ -40,6 +43,12 @@ class BehaviorSettingsFragment : BasePreferenceFragment() {
 
     override fun onResume() {
         super.onResume()
+        // Sillage : nombre de morceaux qui atteignent le seuil
+        findPreference<Preference>("skip_review")?.let { pref ->
+            val threshold = SkipScores.threshold(requireContext())
+            val count = SkipScores.all(requireContext()).count { it.value >= threshold }
+            pref.summary = getString(R.string.settings_skip_review_summary, count)
+        }
         if (hasScopedStorageWithMediaTypes()) {
             val preference = findPreference<SwitchPreferenceCompat>("album_covers")!!
             preference.isPersistent = false
@@ -57,6 +66,12 @@ class BehaviorSettingsFragment : BasePreferenceFragment() {
     override fun onPreferenceTreeClick(preference: Preference): Boolean {
         if (preference.key == "blacklist") {
             startActivity(BlacklistSettingsActivity::class.java)
+        }
+        if (preference.key == "skip_review") {
+            // retour direct à l'écran principal, qui affiche la proposition
+            SkipReview.shownThisSession = false
+            startActivity(Intent(requireContext(), MainActivity::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP))
         }
         // Prior to Android 13, this changes a setting which changes MediaStoreUtils behaviour
         // Android 13 and later, this displays state of images permission granted/denied

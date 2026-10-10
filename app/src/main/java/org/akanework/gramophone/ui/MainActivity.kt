@@ -820,6 +820,12 @@ class MainActivity : BaseActivity() {
      *
      * @param frag: Target fragment.
      */
+    override fun onResume() {
+        super.onResume()
+        // Sillage : proposition d'effacement des morceaux souvent passés
+        SkipReview.maybePropose(this)
+    }
+
     fun startFragment(frag: Fragment, args: (Bundle.() -> Unit)? = null) {
         supportFragmentManager.commit {
             addToBackStack(System.currentTimeMillis().toString())

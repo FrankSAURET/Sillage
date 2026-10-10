@@ -29,7 +29,7 @@ Base : Gramophone, branche `beta`, commit du 2 octobre 2026 (dépôt amont ajout
 - Service principal : `app/src/main/java/org/akanework/gramophone/logic/GramophonePlaybackService.kt` (environ 2 000 lignes).
 - Media3 est un sous-module Git (fork) : `git submodule update --init --recursive` avant de compiler.
 - Bibliothèque lue via MediaStore avec liste noire et liste blanche de dossiers ; la liste blanche (sous-dossiers inclus) sert de filtre « dossier racine ».
-- Aucune base de données locale : le score de skip demandera un stockage à créer.
+- Aucune base de données locale : le score de skip est rangé dans les préférences privées `skip_scores` (clé = chemin du fichier).
 - Compilation vérifiée par Frank dans Android Studio le 10 octobre 2026. Le SDK Android n'est pas téléchargeable depuis l'espace de travail cloud : rien n'y est compilé.
 
 ## Feuille de route
@@ -38,7 +38,7 @@ Base : Gramophone, branche `beta`, commit du 2 octobre 2026 (dépôt amont ajout
 2. [fait] Renommage de l'application en Sillage (nom, identifiant `io.github.franksauret.sillage`, icône provisoire).
 3. [fait] Filtre sur un dossier racine (liste blanche existante, renommée « Dossiers racines »).
 4. [fait] Aléatoire perpétuel par défaut.
-5. Score de skip et écran de suppression.
+5. [fait, à tester] Score de skip et proposition d'effacement (`logic/utils/SkipScores.kt`, `ui/SkipReview.kt`).
 6. Bouton « efface ce morceau » dans Android Auto.
 
 ## Identité : décisions

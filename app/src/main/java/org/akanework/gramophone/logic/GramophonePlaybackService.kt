@@ -124,6 +124,7 @@ import org.akanework.gramophone.logic.utils.BtCodecInfo
 import org.akanework.gramophone.logic.utils.CircularShuffleOrder
 import org.akanework.gramophone.logic.utils.Flags
 import org.akanework.gramophone.logic.utils.LastPlayedManager
+import org.akanework.gramophone.logic.utils.SkipScores
 import org.akanework.gramophone.logic.utils.LrcUtils.LrcParserOptions
 import org.akanework.gramophone.logic.utils.LrcUtils.extractAndParseLyrics
 import org.akanework.gramophone.logic.utils.LrcUtils.loadAndParseLyricsFile
@@ -1770,12 +1771,39 @@ class GramophonePlaybackService : MediaLibraryService(), MediaSessionService.Lis
         pendingDownstreamFormat.removeAll { eventTime.mediaPeriodId?.periodUid == it.first }
     }
 
+    /**
+     * Sillage : score de skip. Fin naturelle du morceau → −1 ; passage au morceau suivant
+     * dans sa première minute → +1. Revenir au précédent ou sauter ailleurs ne compte pas.
+     */
+    private fun updateSkipScore(
+        oldPosition: Player.PositionInfo,
+        newPosition: Player.PositionInfo,
+        reason: Int
+    ) {
+        val path = oldPosition.mediaItem?.getFile()?.path ?: return
+        when (reason) {
+            Player.DISCONTINUITY_REASON_AUTO_TRANSITION -> SkipScores.add(this, path, -1)
+            Player.DISCONTINUITY_REASON_SEEK, Player.DISCONTINUITY_REASON_SKIP -> {
+                if (oldPosition.mediaItemIndex == newPosition.mediaItemIndex ||
+                    oldPosition.positionMs >= SkipScores.SKIP_WINDOW_MS) return
+                val player = endedWorkaroundPlayer ?: return
+                // « suivant » en répéter-un passe quand même au morceau d'après
+                val repeat = if (player.repeatMode == Player.REPEAT_MODE_ONE)
+                    Player.REPEAT_MODE_ALL else player.repeatMode
+                val next = player.currentTimeline.getNextWindowIndex(
+                    oldPosition.mediaItemIndex, repeat, player.shuffleModeEnabled)
+                if (newPosition.mediaItemIndex == next) SkipScores.add(this, path, 1)
+            }
+        }
+    }
+
     var lastKnownPeriodUid: Any? = null // TODO: file upstream bug, maybe? this seems a bit weird
     override fun onPositionDiscontinuity(
         oldPosition: Player.PositionInfo,
         newPosition: Player.PositionInfo,
         reason: Int
     ) {
+        updateSkipScore(oldPosition, newPosition, reason)
         if (lastKnownPeriodUid != newPosition.periodUid || oldPosition.periodUid != newPosition.periodUid) {
             var changed = false
             downstreamFormat.toSet().forEach {
