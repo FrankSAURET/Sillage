@@ -35,14 +35,14 @@ Menu **Tools > SDK Manager** (ou l'icône de cube avec flèche).
 1. Onglet **SDK Platforms** : cocher **Android API 37** (le projet compile avec `compileSdk = 37`).
 2. Onglet **SDK Tools**, cocher « Show Package Details » en bas à droite, puis :
    - **Android SDK Build-Tools** : la dernière version ;
-   - **NDK (Side by side)** : la dernière version (le module `hificore` contient du C++) ;
+   - **NDK (Side by side)** : déplier et cocher la version **28.2.13676358** exactement, celle qu'attend Gradle (`media3` et `hificore` contiennent du C++) ;
    - **CMake** : la version **3.22.1** ;
    - **Android Auto Desktop Head Unit Emulator** : pour tester Android Auto sur le PC (étape 7).
 3. Appliquer, accepter les licences, attendre la fin des téléchargements.
 
 ## 4. Ouvrir le projet
 
-1. **File > Open**, sélectionner le dossier racine du dépôt (celui qui contient `settings.gradle.kts`), puis OK.
+1. **File > Open**, aller dans le dossier racine du dépôt et sélectionner le **fichier** `settings.gradle.kts`, puis OK. Si une question s'affiche, répondre **Open as Project**.
 2. Répondre **Trust Project** à la question de confiance.
 3. Android Studio lance la synchronisation Gradle (barre de progression en bas). La première fois, elle télécharge Gradle et toutes les dépendances : compter plusieurs minutes.
 4. Vérifier le JDK : **File > Settings > Build, Execution, Deployment > Build Tools > Gradle**, champ **Gradle JDK** = le JDK fourni avec Android Studio (« jbr-21 » ou plus récent). Le projet exige Java 21.
@@ -51,8 +51,9 @@ Si la synchronisation échoue, lire la première erreur dans l'onglet **Build** 
 
 - « SDK location not found » : rouvrir le projet, Android Studio crée `local.properties` tout seul ; sinon le créer avec `sdk.dir=C\:\\Users\\VOUS\\AppData\\Local\\Android\\Sdk`.
 - « package.properties (Le fichier spécifié est introuvable) » : étape 2.
+- « NDK not configured » qui persiste après installation : `media3` est une construction incluse qui cherche le SDK de son côté (son propre `local.properties`, sinon la variable `ANDROID_HOME`). Copier `local.properties` de la racine dans `media3/` (fichier ignoré par git), vérifier que `ANDROID_HOME` et `ANDROID_SDK_ROOT` sont absentes ou pointent vers le même SDK, puis fermer et rouvrir Android Studio.
 - Erreur sur `media3` introuvable : sous-module non initialisé, étape 2.
-- « NDK not configured » ou « CMake 3.22.1 not found » : étape 3.
+- « NDK not configured … Preferred NDK version is 'X' » ou « CMake 3.22.1 not found » : installer exactement la version citée (étape 3), puis **File > Sync Project with Gradle Files**.
 
 ## 5. Compiler
 
@@ -73,17 +74,19 @@ Sans téléphone, **Tools > Device Manager** permet de créer un émulateur (pre
 
 ## 7. Tester Android Auto sur le PC
 
-1. Sur le téléphone, ouvrir les réglages d'Android Auto, toucher 10 fois la ligne **Version** pour activer le mode développeur.
-2. Menu à trois points > **Paramètres pour les développeurs** : activer **Sources inconnues** (sinon une application non installée depuis le Play Store n'apparaît pas).
-3. Même menu > **Démarrer le serveur de l'unité principale**.
-4. Sur le PC, dans un terminal :
+1. Sur le téléphone, ouvrir les réglages d'Android Auto. Sur Android 10 et plus, Android Auto est intégré au système et n'a pas d'icône : passer par **Paramètres**, puis la loupe de recherche, et taper « Android Auto » (selon la marque : **Appareils connectés > Préférences de connexion > Android Auto**, ou **Appareils connectés > Android Auto** chez Samsung). Si rien n'apparaît, installer « Android Auto » depuis le Play Store.
+2. Tout en bas de ces réglages, toucher une dizaine de fois la ligne **Version**, puis accepter l'activation du mode développeur.
+3. Menu à trois points en haut à droite > **Paramètres pour les développeurs** : activer **Sources inconnues** (sinon une application non installée depuis le Play Store n'apparaît pas).
+4. Même menu à trois points > **Démarrer le serveur de l'unité principale**.
+5. Téléphone branché en USB, sur le PC, dans PowerShell (`adb` n'est pas dans le PATH par défaut, d'où les chemins complets) :
 
-```bash
-adb forward tcp:5277 tcp:5277
-"%LOCALAPPDATA%\Android\Sdk\extras\google\auto\desktop-head-unit.exe"
+```powershell
+$sdk = "$env:LOCALAPPDATA\Android\Sdk"
+& "$sdk\platform-tools\adb.exe" forward tcp:5277 tcp:5277
+& "$sdk\extras\google\auto\desktop-head-unit.exe"
 ```
 
-(La deuxième ligne vaut pour l'invite de commandes `cmd` ; dans PowerShell : `& "$env:LOCALAPPDATA\Android\Sdk\extras\google\auto\desktop-head-unit.exe"`.)
+Pour taper simplement `adb` à l'avenir : Paramètres Windows > « Modifier les variables d'environnement pour votre compte » > `Path` > Nouveau > `%LOCALAPPDATA%\Android\Sdk\platform-tools`, puis rouvrir PowerShell.
 
 Une fenêtre simule l'écran de la voiture ; Sillage apparaît dans la liste des applications multimédia.
 

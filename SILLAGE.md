@@ -30,7 +30,7 @@ Base : Gramophone, branche `beta`, commit du 2 octobre 2026 (dépôt amont ajout
 - Media3 est un sous-module Git (fork) : `git submodule update --init --recursive` avant de compiler.
 - Bibliothèque lue via MediaStore avec liste noire et liste blanche de dossiers ; la liste blanche (sous-dossiers inclus) sert de filtre « dossier racine ».
 - Aucune base de données locale : le score de skip demandera un stockage à créer.
-- Compilation non vérifiée à ce jour : le SDK Android n'est pas téléchargeable depuis l'espace de travail cloud.
+- Compilation vérifiée par Frank dans Android Studio le 10 octobre 2026. Le SDK Android n'est pas téléchargeable depuis l'espace de travail cloud : rien n'y est compilé.
 
 ## Feuille de route
 
