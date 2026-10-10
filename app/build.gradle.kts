@@ -275,7 +275,7 @@ kotlin {
 }
 
 base {
-    archivesName = "Gramophone-${android.defaultConfig.versionName}${android.defaultConfig.versionNameSuffix ?: ""}"
+    archivesName = "Sillage-${android.defaultConfig.versionName}${android.defaultConfig.versionNameSuffix ?: ""}"
 }
 
 baselineProfile {
