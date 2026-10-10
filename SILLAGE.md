@@ -37,7 +37,7 @@ Base : Gramophone, branche `beta`, commit du 2 octobre 2026 (dépôt amont ajout
 1. [fait] Traduction française intégrale (chaînes, fiche de l'application, notes de version).
 2. [fait] Renommage de l'application en Sillage (nom, identifiant `io.github.franksauret.sillage`, icône provisoire).
 3. [fait] Filtre sur un dossier racine (liste blanche existante, renommée « Dossiers racines »).
-4. [fait] Aléatoire perpétuel par défaut.
+4. [fait] Aléatoire perpétuel par défaut. File reconnue à son titre (`perpetual_shuffle`) ; refaite depuis la bibliothèque quand son dernier morceau commence (`renewPerpetualShuffle`), ou par le menu « Nouvelle liste aléatoire ».
 5. [fait, à tester] Score de skip et proposition d'effacement (`logic/utils/SkipScores.kt`, `ui/SkipReview.kt`).
 6. Bouton « efface ce morceau » dans Android Auto.
 

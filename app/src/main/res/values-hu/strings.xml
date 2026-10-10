@@ -229,7 +229,6 @@
     <string name="spk_encoding_aac_eld">AAC-ELD</string>
     <string name="spk_encoding_aac_he_v2">HE-AAC v2</string>
     <string name="spk_encoding_ac4">AC-4</string>
-    <string name="home_menu_shuffle">Az összes véletlenszerű lejátszása</string>
     <string name="bitrate_unknown">Ismeretlen bitráta</string>
     <string name="dialog_bitrate">Bitráta</string>
     <string name="yes">Igen</string>

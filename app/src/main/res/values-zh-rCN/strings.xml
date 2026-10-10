@@ -166,7 +166,6 @@
     <string name="shuffle_all">全部随机播放</string>
     <string name="skip_next">跳到下一个</string>
     <string name="seekbar">搜索栏</string>
-    <string name="home_menu_shuffle">全部随机播放</string>
     <string name="grant_audio"><![CDATA[请授予“音乐和音频”权限]]></string>
     <string name="delete">删除</string>
     <string name="yes">是</string>

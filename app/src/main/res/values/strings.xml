@@ -17,7 +17,7 @@
     <!-- Menu item in home screen -->
     <string name="home_menu_settings">Settings</string>
     <!-- Menu item in home screen -->
-    <string name="home_menu_shuffle">Shuffle all</string>
+    <string name="home_menu_shuffle">New shuffled list</string>
     <!-- Menu item in home screen -->
     <string name="home_menu_refresh">Refresh</string>
     <!-- Tab on home screen showing a list of songs -->
@@ -1319,4 +1319,5 @@ supporting local search. This string is displayed in the search bar when using G
     <string name="skip_review_keep">Keep</string>
     <string name="skip_review_later">Later</string>
     <string name="skip_review_none">No song reaches the threshold</string>
+    <string name="perpetual_shuffle">All songs, shuffled</string>
 </resources>

@@ -156,7 +156,6 @@
     <string name="spk_channel_out_top_center">Centro superior</string>
     <string name="spk_channel_invalid">Inválido</string>
     <string name="spk_channel_out_top_back_center">Fundo superior ao centro</string>
-    <string name="home_menu_shuffle">Reproduzir no modo aleatório</string>
     <string name="scroll_to_albums">Role para álbuns</string>
     <string name="scroll_to_songs">Role para as músicas</string>
     <string name="remove">Remover</string>

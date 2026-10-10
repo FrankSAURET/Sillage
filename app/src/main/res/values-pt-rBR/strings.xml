@@ -171,7 +171,6 @@
     <string name="tab_order">Configurar ordem das abas</string>
     <string name="tab_order_summary">O aplicativo mostrará a primeira guia na inicialização. As guias após o divisor ficarão ocultas.</string>
     <string name="play_all">Reproduzir tudo</string>
-    <string name="home_menu_shuffle">Reproduzir no modo aleatório</string>
     <string name="delete">Excluir</string>
     <string name="yes">Sim</string>
     <string name="no">Não</string>
