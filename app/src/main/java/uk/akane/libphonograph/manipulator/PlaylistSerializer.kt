@@ -668,7 +668,7 @@ object PlaylistSerializer {
                     doc.startTag(null, "meta")
                     doc.attribute(null, "name", "Generator")
                     doc.attribute(
-                        null, "content", "Gramophone " +
+                        null, "content", "Sillage " +
                                 "${BuildConfig.MY_VERSION_NAME}/${BuildConfig.RELEASE_TYPE}"
                     )
                     doc.endTag(null, "meta")
@@ -922,7 +922,7 @@ object PlaylistSerializer {
                     }
                     doc.startTag(x0, "meta")
                     doc.attribute(null, "rel", "$XSPF_EXT_GENERATOR")
-                    doc.text("Gramophone ${BuildConfig.MY_VERSION_NAME}/${BuildConfig.RELEASE_TYPE}")
+                    doc.text("Sillage ${BuildConfig.MY_VERSION_NAME}/${BuildConfig.RELEASE_TYPE}")
                     doc.endTag(x0, "meta")
 
                     if (playlist.extensions != null) {

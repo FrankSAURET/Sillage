@@ -40,6 +40,30 @@
 
     </PreferenceCategory>
 
+    <!-- Sillage : score de skip et proposition d'effacement -->
+    <PreferenceCategory
+        android:layout="@layout/preference_category_md"
+        android:title="@string/settings_category_skip">
+
+        <SeekBarPreference
+            android:defaultValue="3"
+            android:key="skip_threshold"
+            android:layout="@layout/preference_seekbar"
+            android:max="10"
+            android:title="@string/settings_skip_threshold"
+            android:summary="@string/settings_skip_threshold_summary"
+            app:min="1"
+            app:iconSpaceReserved="false"
+            app:showSeekBarValue="true" />
+
+        <Preference
+            android:key="skip_review"
+            android:layout="@layout/preference_basic"
+            android:title="@string/settings_skip_review"
+            app:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
     <PreferenceCategory
         android:layout="@layout/preference_category_md"
         android:title="@string/settings_category_misc">

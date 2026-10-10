@@ -132,8 +132,6 @@
     <string name="settings_lyrics_center">Выравнивание по центру</string>
     <string name="settings_lyrics_configuration_summary">Настройки внешнего вида текста песен</string>
     <string name="settings_lyrics_bold_summary">Использует жирный шрифт для текста песни</string>
-    <string name="settings_blacklist_folder">Чёрный список папок</string>
-    <string name="settings_blacklist_folder_summary">Фильтровать песни из определённых папок</string>
     <string name="settings_crash_application">Сбой приложения</string>
     <string name="delete_failed">Не удалось удалить песню: %s</string>
     <string name="dialog_edit_metadata">Редактировать</string>
@@ -301,7 +299,6 @@
     <string name="device_type_hdmi_arc">HDMI Реверсивный аудиоканал</string>
     <string name="open_in_gramophone">Открыть в Граммофоне</string>
     <string name="crash_report">Отчёт о сбое</string>
-    <string name="email_clipboard">Адрес электронной почты скопирован в буфер обмена</string>
     <string name="settings_export_logs">Экспорт логов программы</string>
     <string name="audio_signal_chain">Звуковой тракт</string>
     <string name="settings_audio_quality_info_summary">Показать информацию о качестве/формате звука на экране плеера</string>
@@ -361,8 +358,6 @@
     <string name="settings_lyrics_no_animation_summary">Отключает все анимации, которые используются для перехода между строками текста</string>
     <string name="spk_channel_out_front_wide_right">Передняя широкая правая</string>
     <string name="spk_channel_out_low_frequency_2">Низкая частота 2</string>
-    <string name="package_type_explainer">Gramophone APK может быть создан любым, потому что Граммофон является открытым исходным кодом. Чтобы помочь запомнить, откуда взялся APK, Граммофон предоставляет тип пакета.\n\nНаиболее распространенный тип - Release, который получают от F-Droid, Google Play, GitHub или IzzyOnDroid.\nТип пакета CI относится к автоматическим сборкам, сделанным для каждого перевода на GitHub. Эти сборки могут быть нестабильными.\nВ случае других типов упаковок наименование должно давать разумное указание на то, откуда был получен АРК.</string>
-    <string name="send_email">Отправить email</string>
     <string name="spk_encoding_unknown_d">Неизвестный формат %d</string>
     <string name="spk_encoding_qcelp">QCELP</string>
     <string name="oh_no">О нет!</string>
@@ -371,8 +366,7 @@
     <string name="device_type_aux_line">линия AUX</string>
     <string name="settings_trim_lyrics_summary">Иногда пробелы в начале или в конце строки — это художественный приём автора. Но если вам это не нравится, просто включите эту опцию, и лишние пробелы будут удаляться автоматически.</string>
     <string name="settings_lyrics_no_animation">Отключить анимации</string>
-    <string name="gramophone_crashed_explainer2">В работе Gramophone произошёл сбой :(\n\nПожалуйста, отправьте отчёт об ошибке, чтобы неполадки, подобные тем, что привели к этому сбою, можно было исправить!\n\nКаждая ситуация уникальна, словно музыка, и без вашей помощи, весьма вероятно, эта ошибка <b>НЕ</b> будет устранена!</string>
-    <string name="send_email_manually">Пожалуйста отправьте лог файл по адресу nift4@posteo.net - не могу найти почтовую программу</string>
+    <string name="gramophone_crashed_explainer2">В работе Sillage произошёл сбой :(\n\nПожалуйста, отправьте отчёт об ошибке, чтобы неполадки, подобные тем, что привели к этому сбою, можно было исправить!\n\nКаждая ситуация уникальна, словно музыка, и без вашей помощи, весьма вероятно, эта ошибка <b>НЕ</b> будет устранена!</string>
     <string name="spk_encoding_iec61937">IEC 61937</string>
     <string name="spk_encoding_aptx">aptX</string>
     <string name="mix_port_flag_deep_buffer">Глубокий буффер</string>
@@ -393,7 +387,6 @@
     <string name="spk_encoding_aac_latm_he_v1">HE-AAC v1 в LATM</string>
     <string name="spk_encoding_mpegh_sub_bl_l4">MPEG-H Базовый профиль L4</string>
     <string name="spk_encoding_mpegh_sub_lc_l3">MPEG-H Низкая сложность L3</string>
-    <string name="what_were_you_doing">Что вы делали в Gramophone, когда произошёл этот сбой? Пожалуйста, добавьте как можно больше деталей, чтобы увеличить шансы на то, что я смогу решить проблему.\n\nОбратите внимание, что для отчётов об ошибках предпочтителен английский язык, но я постараюсь использовать машинный перевод, если вы отправите отчёты на другом языке.</string>
     <string name="settings_translation_auto_word">Автоматически анимировать переводы</string>
     <string name="refreshing_wait">Обновление, пожалуйста, подождите…</string>
     <string name="still_refreshing">Обновление, шаг %1$d/%2$d: %3$s</string>
@@ -411,7 +404,7 @@
     <string name="delete_failed_playlist">Не удалось удалить плейлист: %s</string>
     <string name="log_will_auto_send">Логи будут отправлены автоматически, вместо этого объясните проблему</string>
     <string name="rename">Переименовать</string>
-    <string name="refresh_did_you_know">Gramophone обновляет список песен при каждом запуске приложения, а также автоматически обнаруживает новые медиафайлы во время своей работы. Кнопка «Обновить» не просто перезагружает медиатеку в Gramophone, а запрашивает у вашей системы полное повторное сканирование всех файлов на всех подключенных постоянных накопителях (именно поэтому процесс занимает некоторое время). Это означает, что если ваша система и другие приложения работают исправно, вам никогда не понадобится использовать эту функцию.\n\nНе хватает каких-то песен? Обязательно проверьте раздел «Настройки» &gt; «Поведение» на предмет фильтра по минимальной длительности и чёрного списка папок и убедитесь, что для этих параметров установлены ожидаемые значения. Чтобы узнать о других возможных причинах, пожалуйста, ознакомьтесь с нашим разделом FAQ.</string>
+    <string name="refresh_did_you_know">Sillage обновляет список песен при каждом запуске приложения, а также автоматически обнаруживает новые медиафайлы во время своей работы. Кнопка «Обновить» не просто перезагружает медиатеку в Sillage, а запрашивает у вашей системы полное повторное сканирование всех файлов на всех подключенных постоянных накопителях (именно поэтому процесс занимает некоторое время). Это означает, что если ваша система и другие приложения работают исправно, вам никогда не понадобится использовать эту функцию.\n\nНе хватает каких-то песен? Обязательно проверьте раздел «Настройки» &gt; «Поведение» на предмет фильтра по минимальной длительности и чёрного списка папок и убедитесь, что для этих параметров установлены ожидаемые значения. Чтобы узнать о других возможных причинах, пожалуйста, ознакомьтесь с нашим разделом FAQ.</string>
     <string name="no_app_found">Не найдено ни одного приложения, которое могло бы это сделать</string>
     <string name="contributors_nift4">Ведущий разработчик</string>
     <string name="contributors_123duo3">Ведущий дизайнер</string>
@@ -491,8 +484,6 @@
     <string name="favorite_failed_title">Не удалось изменить статус «Избранного» для трека</string>
     <string name="favorite_failed_text">Нажмите здесь, чтобы применить изменения, предоставив доступ к файлу плейлиста «Избранное»</string>
     <string name="error_in_bg">Ошибки в фоновом режиме</string>
-    <string name="settings_whitelist">Белый список</string>
-    <string name="whitelist_and_blacklist">Если в белом списке не выбраны папки, доступ будет открыт ко всем папкам.\n\nБелый и чёрный списки работают вместе, но приоритет остаётся за чёрным списком. Например, вы можете добавить папку в белый список, а одну из её вложенных папок — в чёрный, тем самым исключив её.</string>
     <string name="discard_changes_title">Не сохранять изменения?</string>
     <string name="save">Сохранить</string>
     <string name="discard">Отменить</string>

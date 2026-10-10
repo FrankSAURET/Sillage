@@ -536,4 +536,15 @@
     <string name="settings_notification_lyrics_summary">Afficher les paroles comme titre de la notification et « artiste - titre » comme sous-titre</string>
     <string name="settings_always_skip_previous">Toujours revenir au morceau précédent</string>
     <string name="settings_always_skip_previous_summary">Passer directement au morceau précédent en appuyant sur le bouton précédent, au lieu de revenir au début du morceau</string>
+    <!-- Sillage : score de skip et proposition d'effacement -->
+    <string name="settings_category_skip">Morceaux souvent passés</string>
+    <string name="settings_skip_threshold">Seuil d’effacement</string>
+    <string name="settings_skip_threshold_summary">Passer un morceau dans sa première minute ajoute 1, l’écouter jusqu’au bout retire 1. Les morceaux qui atteignent ce score vous sont proposés à l’effacement.</string>
+    <string name="settings_skip_review">Proposer maintenant</string>
+    <string name="settings_skip_review_summary">Morceaux atteignant le seuil : %1$d</string>
+    <string name="skip_review_title">Effacer les morceaux souvent passés ?</string>
+    <string name="skip_review_item">%1$s – %2$s (score %3$d)</string>
+    <string name="skip_review_keep">Garder</string>
+    <string name="skip_review_later">Plus tard</string>
+    <string name="skip_review_none">Aucun morceau n’atteint le seuil</string>
 </resources>

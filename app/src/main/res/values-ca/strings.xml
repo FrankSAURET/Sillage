@@ -153,8 +153,6 @@
     <string name="settings_lyric">Lletra</string>
     <string name="settings_lyrics_configuration">Configuració de les lletres</string>
     <string name="settings_preference_category_application">Aplicació</string>
-    <string name="settings_blacklist_folder_summary">Filtra les cançons de determinades carpetes</string>
-    <string name="settings_blacklist_folder">Carpetes a la llista negra</string>
     <string name="settings_category_misc">Miscel·lània</string>
     <string name="settings_category_full_player">Reproductor complet</string>
     <string name="settings_category_filters">Filtres</string>
@@ -269,7 +267,7 @@
     <string name="device_type_line_digital">Línia digital</string>
     <string name="device_type_aux_line">Línia AUX</string>
     <string name="device_type_dock_analog">Acoblador analògic</string>
-    <string name="open_in_gramophone">Obre en el Gramophone</string>
+    <string name="open_in_gramophone">Obre en el Sillage</string>
     <string name="settings_trim_lyrics_summary">Els espais abans del primer caràcter o després del final d\'una línia de lletra poden tenir valor artístic. Si no hi esteu d\'acord, podeu activar aquest commutador per a eliminar aquests espais automàticament.</string>
     <string name="cannot_play_file">Aquest fitxer no es pot reproduir</string>
     <string name="settings_lyrics_no_animation">Desactiva les animacions</string>
@@ -279,11 +277,8 @@
     <string name="bitrate_unknown">Taxa de bits desconeguda</string>
     <string name="bitrate_format">%1$d kbps</string>
     <string name="settings_open_source_licenses">Llicències de codi obert</string>
-    <string name="package_type_explainer">Qualsevol persona pot crear APK del Gramophone, perquè el Gramophone és de codi obert. Per ajudar a recordar d\'on ve un APK, el Gramophone proporciona el tipus de paquet.\n\nEl tipus més comú és el Release, que s\'obté de F-Droid, Google Play, GitHub o IzzyOnDroid.\nEl tipus de paquet CI es refereix a les construccions automatitzades fetes per cada comissió a GitHub. Aquestes construccions poden ser inestables.\nPer a altres tipus de paquets, el nom hauria de donar una pista raonable d\'on és l\'APK.</string>
     <string name="settings_contributors_click">%s (feu clic per a més!)</string>
     <string name="oh_no">Oh, no!</string>
-    <string name="send_email">Envia un correu electrònic</string>
-    <string name="send_email_manually">Envieu el registre a nift4@posteo.net, no s\'ha pogut trobar cap aplicació de correu</string>
     <string name="failed_to_parse_lyric">Ha fallat en analitzar la lletra</string>
     <string name="audio_not_initialized">El sistema de reproducció d\'àudio no està inicialitzat. Intenteu reproduir alguna cosa!</string>
     <string name="audio_signal_chain">Cadena del senyal d\'àudio</string>
@@ -377,10 +372,8 @@
     <string name="spk_encoding_mpegh_sub_bl_l4">MPEG-H línea base perfil L4</string>
     <string name="spk_encoding_aac_adts_eld">AAC-ELD en ADTS</string>
     <string name="spk_encoding_mat_2_1">Dolby MAT 2.1</string>
-    <string name="gramophone_crashed_explainer2">El Gramophone ha fallat :(\n\nEnvieu-me un informe d\'error per tal que els problemes que han portat a aquesta fallada es puguin solucionar!\n\nAmb les situacions tan úniques com la música, sense la vostra ajuda, és probable que aquest error <b>NO</b> es pugui corregir!</string>
+    <string name="gramophone_crashed_explainer2">El Sillage ha fallat :(\n\nEnvieu-me un informe d\'error per tal que els problemes que han portat a aquesta fallada es puguin solucionar!\n\nAmb les situacions tan úniques com la música, sense la vostra ajuda, és probable que aquest error <b>NO</b> es pugui corregir!</string>
     <string name="crash_report">Informe de fallada</string>
-    <string name="what_were_you_doing">Què fèieu al Gramophone quan va passar aquesta fallada? Afegiu tants detalls com sigui possible per a augmentar les possibilitats que jo pugui solucionar el problema.\n\nTingueu en compte que es prefereix l\'anglès als informes d\'errors, però intentaré utilitzar la traducció automàtica si envieu informes d\'errors en un altre idioma.</string>
-    <string name="email_clipboard">S\'ha copiat l\'adreça de correu electrònic i el text al porta-retalls</string>
     <string name="settings_export_logs">Exporta els registres de l\'aplicació</string>
     <string name="settings_audio_quality_info">Informació de la qualitat de l\'àudio</string>
     <string name="settings_audio_quality_info_summary">Mostra informació de la qualitat/format de l\'àudio a la pantalla del reproductor</string>
@@ -405,7 +398,7 @@
     <string name="edit_playlist_failed">Fa fallat en editar la llista de reproducció: %s</string>
     <string name="rename_playlist">Canvia el nom de la llista de reproducció</string>
     <string name="add_to_playlist">Afegeix a la llista de reproducció</string>
-    <string name="refresh_did_you_know">El Gramophone demana una llista de cançons actualitzada en cada inici d\'aplicació, i mentre el Gramophone s\'està executant, també detectarà automàticament mitjans nous. Aquest botó «Actualitza» no tornarà a carregar el mitjà al Gramophone, sinó que demanarà al vostre sistema que torni a explorar tots els fitxers de tots els dispositius d\'emmagatzematge permanent connectats (per això triga una estona). Això vol dir que, tret que el vostre sistema o altres aplicacions estiguin funcionant malament, mai haureu d\'utilitzar aquesta funció.\n\nFalten algunes cançons? Assegureu-vos de comprovar la Configuració &gt; Comportament per al filtre de longitud mínima i la llista negra de carpetes, i confirmeu que aquests paràmetres estan definits amb el valor esperat. Per altres motius possibles, consulteu les nostres PMF.</string>
+    <string name="refresh_did_you_know">El Sillage demana una llista de cançons actualitzada en cada inici d\'aplicació, i mentre el Sillage s\'està executant, també detectarà automàticament mitjans nous. Aquest botó «Actualitza» no tornarà a carregar el mitjà al Sillage, sinó que demanarà al vostre sistema que torni a explorar tots els fitxers de tots els dispositius d\'emmagatzematge permanent connectats (per això triga una estona). Això vol dir que, tret que el vostre sistema o altres aplicacions estiguin funcionant malament, mai haureu d\'utilitzar aquesta funció.\n\nFalten algunes cançons? Assegureu-vos de comprovar la Configuració &gt; Comportament per al filtre de longitud mínima i la llista negra de carpetes, i confirmeu que aquests paràmetres estan definits amb el valor esperat. Per altres motius possibles, consulteu les nostres PMF.</string>
     <string name="no_app_found">No s\'ha trobat cap aplicació que pugui fer això</string>
     <string name="contributors_ghhccghk">Lletres a la barra d\'estat i altres millores</string>
     <string name="contributors_nift4">Mantenidor / Desenvolupador principal</string>
@@ -484,8 +477,6 @@
     <string name="favorite_failed_title">Ha fallat en canviar l\'estat de preferida de la cançó</string>
     <string name="favorite_failed_text">Feu clic aquí per aplicar els canvis, concedint permís al fitxer de llista de reproducció de preferides</string>
     <string name="error_in_bg">S\'han produït errors en segon pla</string>
-    <string name="settings_whitelist">Llista blanca</string>
-    <string name="whitelist_and_blacklist">Si no hi ha cap carpeta seleccionada a la llista blanca, es permetran totes les carpetes.\n\nLa llista blanca i la llista negra s\'apliquen conjuntament, i la llista negra té prioritat. Per exemple, podeu permetre una carpeta a la llista blanca mentre s\'exclou una de les seves subcarpetes a la llista negra.</string>
     <string name="discard_changes_title">Descarto els canvis?</string>
     <string name="save">Desa</string>
     <string name="discard">Descarta</string>

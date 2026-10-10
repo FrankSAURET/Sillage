@@ -1308,4 +1308,15 @@ supporting local search. This string is displayed in the search bar when using G
     <string name="loading_playlists">Loading playlists...</string>
     <!-- Option to enable reordering mode for items in a list -->
     <string name="edit_mode">Enter edit mode</string>
+    <!-- Sillage : score de skip et proposition d'effacement -->
+    <string name="settings_category_skip">Often skipped songs</string>
+    <string name="settings_skip_threshold">Deletion threshold</string>
+    <string name="settings_skip_threshold_summary">Skipping a song in its first minute adds 1, listening to the end removes 1. Songs reaching this score are offered for deletion.</string>
+    <string name="settings_skip_review">Review now</string>
+    <string name="settings_skip_review_summary">Songs reaching the threshold: %1$d</string>
+    <string name="skip_review_title">Delete often skipped songs?</string>
+    <string name="skip_review_item">%1$s – %2$s (score %3$d)</string>
+    <string name="skip_review_keep">Keep</string>
+    <string name="skip_review_later">Later</string>
+    <string name="skip_review_none">No song reaches the threshold</string>
 </resources>

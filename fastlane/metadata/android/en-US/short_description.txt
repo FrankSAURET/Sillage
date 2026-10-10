@@ -1,1 +1,1 @@
-Simple offline music player with minimalistic design
+Offline music player with endless shuffle and Android Auto support
