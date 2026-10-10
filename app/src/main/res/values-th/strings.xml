@@ -79,12 +79,11 @@
     <string name="spk_encoding_aac_eld">AAC-ELD</string>
     <string name="device_type_unknown">ไม่ทราบ</string>
     <string name="device_type_hearing_aid">เครื่องช่วยฟัง</string>
-    <string name="open_in_gramophone">เปิดในแกรโมโฟน</string>
+    <string name="open_in_gramophone">เปิดในSillage</string>
     <string name="device_type_aux_line">สาย AUX</string>
     <string name="device_type_line_analog">สายแอนะล็อก</string>
     <string name="settings_lyrics_no_animation">ปิดแอนิเมชัน</string>
     <string name="oh_no">ไม่นะ!</string>
-    <string name="send_email">ส่งอีเมล</string>
     <string name="mix_port_flag_iec958_nonaudio">IEC 958 (ไม่มีเสียง)</string>
     <string name="mix_port_flag_sync">ซิงค์</string>
     <string name="mix_port_flag_tts">TTS</string>
@@ -246,8 +245,6 @@
     <string name="settings_play_on_launch">เล่นเมื่อเปิดแอป</string>
     <string name="settings_play_on_launch_summary">ให้เริ่มเล่นเพลงทันทีเมื่อเปิดแอป</string>
     <string name="settings_blacklist">บัญชีดำ</string>
-    <string name="settings_blacklist_folder_summary">กำหนดเพลงในแฟ้มที่ไม่ให้แสดง</string>
-    <string name="settings_blacklist_folder">บัญชีดำ</string>
     <string name="settings_category_basic_info">ข้อมูลทั่วไป</string>
     <string name="settings_category_full_player">เครื่องเล่นเพลงแบบเต็มจอ</string>
     <string name="album_cover">ปกอัลบั้ม</string>

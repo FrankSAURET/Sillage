@@ -1,1 +1,1 @@
-Lecteur de musique hors ligne, simple et minimaliste
+Lecteur de musique hors ligne en aléatoire perpétuel, compatible Android Auto

@@ -231,7 +231,7 @@ class BugHandlerActivity : BaseActivity() {
         val f: File
         try {
             crashLogDir = File(cacheDir, "CrashLog")
-            f = File(crashLogDir, "GramophoneLog${System.currentTimeMillis()}.txt")
+            f = File(crashLogDir, "SillageLog${System.currentTimeMillis()}.txt")
         } finally {
             StrictMode.setThreadPolicy(policy)
         }

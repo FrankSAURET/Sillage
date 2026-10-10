@@ -36,7 +36,7 @@
     </plurals>
     <string name="settings_play_on_launch_summary">Odtwarzaj muzykę po uruchomieniu odtwarzacza</string>
     <string name="category_genres">Gatunki</string>
-    <string name="settings_about_app">O Gramophone</string>
+    <string name="settings_about_app">O Sillage</string>
     <string name="natural_order">Domyślny</string>
     <string name="light">Jasny</string>
     <string name="settings_player_ui_summary">Pełny interfejs odtwarzacza, teksty</string>
@@ -126,8 +126,6 @@
     <string name="settings_lyrics_bold_summary">W tekstach używaj czcionki o większym rozmiarze</string>
     <string name="layout">Układ</string>
     <string name="settings_customization">Dostosowywanie</string>
-    <string name="settings_blacklist_folder">Ignorowane foldery</string>
-    <string name="settings_blacklist_folder_summary">Pomijaj utwory z wybranych folderów</string>
     <string name="play_next">Odtwórz następny</string>
     <string name="unknown_version">Nieznana wersja</string>
     <string name="unknown_artist">Nieznany wykonawca</string>
@@ -273,7 +271,7 @@
     <string name="spk_encoding_pcm_float">32-bit (float) PCM</string>
     <string name="spk_encoding_e_ac3_joc">E-AC-3-JOC</string>
     <string name="device_type_ble_headset">Zestaw słuchawkowy Bluetooth LE</string>
-    <string name="open_in_gramophone">Otwórz w Gramophone</string>
+    <string name="open_in_gramophone">Otwórz w Sillage</string>
     <string name="settings_trim_lyrics_summary">Spacje przed pierwszą literą lub po końcu wersu tekstu mogą mieć wartość artystyczną. Jeśli się z tym nie zgadzasz, możesz włączyć tę opcję, aby automatycznie usuwać te spacje.</string>
     <string name="delete_really">Czy naprawdę chcesz usunąć „%s”? Tego działania nie można cofnąć.</string>
     <string name="cannot_play_file">Nie można odtworzyć tego pliku</string>
@@ -284,10 +282,7 @@
     <string name="bitrate_format">%1$d kbps</string>
     <string name="settings_open_source_licenses">Licencje kodu otwartego</string>
     <string name="settings_contributors_click">%s (kliknij po więcej!)</string>
-    <string name="package_type_explainer">Pakiety APK Gramophone mogą być tworzone przez każdego, ponieważ Gramophone jest oprogramowaniem z otwartym kodem źródłowym. Aby pomóc zapamiętać, skąd pochodzi APK, Gramophone podaje typ pakietu.\n\nNajpopularniejszym typem jest Release, który można uzyskać z F-Droid, Google Play, GitHub lub IzzyOnDroid.\nTyp pakietu CI odnosi się do automatycznych kompilacji tworzonych dla każdego zatwierdzenia na GitHubie. Te kompilacje mogą być niestabilne.\nW przypadku innych typów pakietów nazwa powinna dawać rozsądną wskazówkę, skąd pochodzi APK.</string>
     <string name="oh_no">O nie!</string>
-    <string name="send_email">Wyślij wiadomość e-mail</string>
-    <string name="send_email_manually">Wyślij dziennik na adres nift4dev@posteo.net - nie mogę znaleźć aplikacji pocztowej</string>
     <string name="failed_to_parse_lyric">Nie udało się przeanalizować tekstów</string>
     <string name="mix_port_flag_ultrasound">Ultrasound</string>
     <string name="mix_port_flag_voip_rx">VoIP RX</string>
@@ -340,14 +335,12 @@
     <string name="spk_encoding_mpegh_sub_lc_l3">MPEG-H Niska złożoność L3</string>
     <string name="spk_encoding_mpegh_sub_lc_l4">MPEG-H Niska złożoność L4</string>
     <string name="crash_report">Raport z awarii</string>
-    <string name="email_clipboard">Skopiowano adres e-mail i tekst do schowka</string>
     <string name="settings_export_logs">Eksportuj dzienniki aplikacji</string>
     <string name="spk_encoding_qcelp">QCELP</string>
     <string name="spk_encoding_dra">DRA</string>
     <string name="spk_encoding_sbc">SBC</string>
     <string name="spk_encoding_lhdc_ll">LLAC (LHDC-LL)</string>
     <string name="spk_encoding_aac_adts_ltp">AAC-LTP w ADTS</string>
-    <string name="what_were_you_doing">Co robiłeś/aś w Gramophone, gdy wystąpiła ta awaria? Podaj jak najwięcej szczegółów, aby zwiększyć szanse na naprawienie problemu.\n\nPamiętaj, że w przypadku zgłoszeń błędów preferowany jest język angielski, ale spróbuję użyć tłumaczenia maszynowego, jeśli wyślesz zgłoszenie w innym języku.</string>
     <string name="spk_encoding_lc3">LC3</string>
     <string name="spk_encoding_aac_latm_lc">AAC-LC w LATM</string>
     <string name="spk_encoding_aac_scalable">AAC Skalowalne</string>
@@ -407,7 +400,7 @@
     <string name="rename_failed_playlist">Nie udało się zmienić nazwy listy odtwarzania: %s</string>
     <string name="create_failed_playlist">Nie udało się utworzyć listy odtwarzania: %s</string>
     <string name="playlist_name">Nazwa listy odtwarzania</string>
-    <string name="refresh_did_you_know">Gramophone prosi o zaktualizowanie listy utworów przy każdym uruchomieniu aplikacji, a gdy Gramophone jest uruchomiony, automatycznie wykrywa również nowe nośniki. Przycisk „Odśwież” nie spowoduje ponownego załadowania multimediów w Gramophone, zamiast tego poprosi system o ponowne przeskanowanie wszystkich plików ze wszystkich podłączonych urządzeń pamięci masowej (dlatego zajmuje to trochę czasu). Oznacza to, że jeśli system lub inne aplikacje nie działają nieprawidłowo, nigdy nie będziesz musieć korzystać z tej funkcji.\n\nBrakuje niektórych utworów? Sprawdź Ustawienia &gt; Zachowanie dla filtra minimalnej długości i czarnej listy folderów i potwierdź, że te ustawienia są ustawione na oczekiwaną wartość. Więcej możliwych przyczyn można znaleźć w naszym FAQ.</string>
+    <string name="refresh_did_you_know">Sillage prosi o zaktualizowanie listy utworów przy każdym uruchomieniu aplikacji, a gdy Sillage jest uruchomiony, automatycznie wykrywa również nowe nośniki. Przycisk „Odśwież” nie spowoduje ponownego załadowania multimediów w Sillage, zamiast tego poprosi system o ponowne przeskanowanie wszystkich plików ze wszystkich podłączonych urządzeń pamięci masowej (dlatego zajmuje to trochę czasu). Oznacza to, że jeśli system lub inne aplikacje nie działają nieprawidłowo, nigdy nie będziesz musieć korzystać z tej funkcji.\n\nBrakuje niektórych utworów? Sprawdź Ustawienia &gt; Zachowanie dla filtra minimalnej długości i czarnej listy folderów i potwierdź, że te ustawienia są ustawione na oczekiwaną wartość. Więcej możliwych przyczyn można znaleźć w naszym FAQ.</string>
     <string name="rename_playlist">Zmień nazwę listy odtwarzania</string>
     <string name="add_to_playlist">Dodaj do listy odtwarzania</string>
     <string name="no_app_found">Nie znaleziono aplikacji, która mogłaby to wykonać</string>
@@ -489,8 +482,6 @@
     <string name="favorite_failed_title">Nie udało się zmienić statusu utworu jako ulubionego</string>
     <string name="favorite_failed_text">Kliknij tutaj, aby zastosować zmiany, udzielając uprawnień do pliku ulubionej playlisty</string>
     <string name="error_in_bg">Błędy występujące w tle</string>
-    <string name="settings_whitelist">Biała lista</string>
-    <string name="whitelist_and_blacklist">Jeśli na białej liście nie wybrano żadnych folderów, dostęp będą miały wszystkie foldery.\n\nBiała lista i czarna lista są stosowane łącznie, przy czym czarna lista ma pierwszeństwo. Na przykład można zezwolić na dostęp do folderu umieszczonego na białej liście, jednocześnie wykluczając jeden z jego podfolderów na czarnej liście.</string>
     <string name="delete_really_artist">Czy na pewno chcesz usunąć wszystkie utwory wykonawcy „%s”? Tego działania nie można cofnąć.</string>
     <string name="discard_changes_title">Anulować zmiany?</string>
     <string name="save">Zapisz</string>

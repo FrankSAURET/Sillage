@@ -134,8 +134,6 @@
     <string name="settings_lyrics_bold_summary">استعمال خطٍّ ذي وزنٍ أثقل للكلمات</string>
     <string name="layout">العرض</string>
     <string name="settings_customization">التَّخصيص</string>
-    <string name="settings_blacklist_folder">مُجلَّدات القائمة السّوداء</string>
-    <string name="settings_blacklist_folder_summary">فلترة أغانٍ من مجلَّداتٍ معيَّنة</string>
     <string name="play_next">شغِّل تالِيَاً</string>
     <string name="unknown_version">إصدارٌ غير معروف</string>
     <string name="unknown_artist">فنّانٌ غير معروف</string>
@@ -227,8 +225,6 @@
     <string name="cannot_play_file">لا يمكن تشغيل هذا الملف</string>
     <string name="settings_lyrics_no_animation_summary">تعطيل جميع الرُّسوم المُتحرّكة لانتقال نَص الكلمات</string>
     <string name="oh_no">أوه لا!</string>
-    <string name="send_email">إرسال بريد إلكتروني</string>
-    <string name="send_email_manually">يرجى إرسال السجل إلى nift4@posteo.net - لا يمكن العثور على تطبيق البريد</string>
     <string name="settings_open_source_licenses">تراخيص مفتوحة المصدر</string>
     <string name="mix_port_flag_unknown">غير معروف</string>
     <string name="refreshing_wait">جارٍ التحميل، يُرجى الانتظار…</string>
@@ -255,12 +251,12 @@
     <string name="discard_changes_msg">هل تريد حقاً أن تتجاهل تغيراتك لقائمة التشغيل \"%s\"؟</string>
     <string name="home_menu_quick_refresh">إعادة تحميل سريعة</string>
     <string name="device_type_usb_device">جهاز USB</string>
-    <string name="open_in_gramophone">فتح في جراموفون</string>
+    <string name="open_in_gramophone">فتح في Sillage</string>
     <string name="cannot_find_file">لا يمكن العثور على هذا الملف</string>
     <string name="enter_msg_for_dev_here">أرسل رسالة إلى المطور هنا</string>
     <string name="spk_channel_out_low_frequency">منخفض التردد</string>
     <string name="still_refreshing">جارٍ التحميل، الخطوه %1$d/%2$d: %3$s</string>
-    <string name="refresh_did_you_know">يطلب Gramophone قائمة أغاني محدثة عند كل بدء تشغيل للتطبيق، وأثناء تشغيل Gramophone، سيكتشف الوسائط الجديدة تلقائيًا أيضًا. لن يؤدي زر \"تحديث\" هذا إلى إعادة تحميل الوسائط في Gramophone، بل سيطلب من نظامك إعادة فحص جميع الملفات من جميع أجهزة التخزين الدائمة المتصلة (ولهذا السبب يستغرق الأمر بعض الوقت). وهذا يعني، ما لم يكن نظامك أو تطبيقاتك الأخرى معطلة، فلن تحتاج أبدًا إلى استخدام هذه الميزة.\n\nهل تفتقد بعض الأغاني؟ تأكد من التحقق من الإعدادات &gt; السلوك لمعرفة مرشح الحد الأدنى للطول والقائمة السوداء للمجلدات، وتأكد من تعيين هذه الإعدادات على القيمة المتوقعة. لمعرفة المزيد من الأسباب المحتملة، يُرجى الاطلاع على الأسئلة الشائعة.</string>
+    <string name="refresh_did_you_know">يطلب Sillage قائمة أغاني محدثة عند كل بدء تشغيل للتطبيق، وأثناء تشغيل Sillage، سيكتشف الوسائط الجديدة تلقائيًا أيضًا. لن يؤدي زر \"تحديث\" هذا إلى إعادة تحميل الوسائط في Sillage، بل سيطلب من نظامك إعادة فحص جميع الملفات من جميع أجهزة التخزين الدائمة المتصلة (ولهذا السبب يستغرق الأمر بعض الوقت). وهذا يعني، ما لم يكن نظامك أو تطبيقاتك الأخرى معطلة، فلن تحتاج أبدًا إلى استخدام هذه الميزة.\n\nهل تفتقد بعض الأغاني؟ تأكد من التحقق من الإعدادات &gt; السلوك لمعرفة مرشح الحد الأدنى للطول والقائمة السوداء للمجلدات، وتأكد من تعيين هذه الإعدادات على القيمة المتوقعة. لمعرفة المزيد من الأسباب المحتملة، يُرجى الاطلاع على الأسئلة الشائعة.</string>
     <string name="seekbar">شريط التَّقدُّم</string>
     <string name="timer_expiry_end_of_this_song">سيُوقِف مؤقِّت النوم الموسيقى في نهاية هذه الأغنية</string>
     <string name="timer_expiry_eos">سيُوقِف مؤقِّت النوم الموسيقى عند انتهاء تشغيل الأغنية في %s</string>
@@ -288,7 +284,6 @@
     <string name="restore">استعادة</string>
     <string name="mount_storage">يرجى إدخال بطاقة SD لاستخدام هذه الميزة</string>
     <string name="failed_to_restore">فشل استعادة التغييرات: %s</string>
-    <string name="settings_whitelist">القائمة البيضاء</string>
     <string name="smart">ذكي</string>
     <string name="translators">المُترجِمون</string>
     <string name="favorite_failed_title">فشل في تغيير الحالة المفضلة للأغنية</string>
@@ -303,7 +298,6 @@
     <string name="actions_query_start_random_songs">ابدأ أغاني عشوائية</string>
     <string name="actions_query_shuffle_specific">اخلط $item_name</string>
     <string name="error_in_bg">أخطاء تحدث في الخلفية</string>
-    <string name="whitelist_and_blacklist">إذا لم يتم تحديد أي مجلدات في القائمة البيضاء، فسيتم السماح لجميع المجلدات.\n\nيتم تطبيق القائمة البيضاء والقائمة السوداء معًا، مع إعطاء الأولوية للقائمة السوداء. على سبيل المثال، يمكنك السماح بوجود مجلد في القائمة البيضاء مع استبعاد أحد مجلداته الفرعية في القائمة السوداء.</string>
     <string name="settings_replaygain_boost">التعزيز</string>
     <string name="sort_by_album_year">سنة الألبوم</string>
     <string name="settings_replaygain_boost_desc" formatted="false">"سيؤدي \"التعزيز\" إلى إخراج كل من ReplayGain والموسيقى الأخرى بمستوى صوت أعلى مما هو محدد في جهازك. (إذا تم ضبط مستوى صوت جهازك بالقرب من ١٠٠٪، فلن يؤدي تعزيز الصوت إلى زيادة مستوى الصوت). مع التعزيز، يمكنك الاستمتاع بالموسيقى التي تتمتع بصوت عالٍ مماثل للتطبيقات الأخرى، مثل الألعاب. يرجى ملاحظة أن هذه الميزة تجريبية وقد تتداخل مع تطبيقات المعادل الخارجية. لا يعمل التعزيز مع سماعات الرأس التي تعمل بالبلوتوث. في حالة وجود أي مشاكل متعلقة بحجم الصوت، يرجى تعطيل التعزيز عن طريق تعيينها إلى ٠ dB. "</string>
@@ -326,17 +320,14 @@
     <string name="device_type_hdmi_arc">قناة إرجاع الصوت HDMI</string>
     <string name="device_type_ble_speaker">مكبّر صوت بلوتوث LE</string>
     <string name="device_type_ble_broadcast">بث بلوتوث LE</string>
-    <string name="gramophone_crashed_explainer2">تعطل جراموفون :(\n\nمن فضلك أرسل لي تقريرًا عن الأخطاء حتى يمكن إصلاح مشكلات مثل ما يؤدي إلى هذا التعطل!\n\nكل موقف فريد من نوعه مثل الموسيقى، بدون مساعدتك، من المحتمل <b>ألا</b> يتم إصلاح هذا الخطأ!</string>
-    <string name="package_type_explainer">يمكن إنشاء Gramophone APKs من قبل أي شخص، لأن Gramophone مفتوح المصدر. للمساعدة في تذكر مصدر ملف APK، يوفر Gramophone نوع الحزمة.\n\nالنوع الأكثر شيوعًا هو الإصدار، والذي يتم الحصول عليه من F-Droid، Google Play، GitHub أو IzzyOnDroid.\nيشير نوع حزمة CI إلى الإصدارات الآلية التي يتم إجراؤها لكل التزام على GitHub. قد تكون هذه البنيات غير مستقرة.\nبالنسبة لأنواع العبوات الأخرى، يجب أن يعطي الاسم تلميحًا معقولاً إلى مصدر ملف APK.</string>
+    <string name="gramophone_crashed_explainer2">تعطل Sillage :(\n\nمن فضلك أرسل لي تقريرًا عن الأخطاء حتى يمكن إصلاح مشكلات مثل ما يؤدي إلى هذا التعطل!\n\nكل موقف فريد من نوعه مثل الموسيقى، بدون مساعدتك، من المحتمل <b>ألا</b> يتم إصلاح هذا الخطأ!</string>
     <string name="audio_signal_chain">سلسلة الإشارات الصوتية</string>
     <string name="failed_to_parse_lyric">فشل تحليل الكلمات</string>
     <string name="audio_not_initialized">لم يتم تهيئة نظام تشغيل الصوت. جرب التشغيل على شيء ما!</string>
     <string name="crash_report">تقرير العطل</string>
-    <string name="email_clipboard">تم نسخ عنوان البريد الإلكتروني و النص إلى الحافظة</string>
     <string name="settings_export_logs">تصدير سجلات التطبيق</string>
     <string name="log_will_auto_send">سيتم إرسال السجلات تلقائيًا، اشرح المشكلة بدلاً من ذلك</string>
     <string name="settings_audio_quality_info_summary">عرض معلومات جودة الصوت/التنسيق على شاشة المشغل</string>
-    <string name="what_were_you_doing">ماذا كنت تفعل في جراموفون عندما حدَث هذا العطل؟ يرجى إضافة أكبر عدد ممكن من التفاصيل لزيادة فرص تمكني من حل المشكلة.\n\nيرجى ملاحظة أن اللغة الإنجليزية هي المفضلة لتقارير الأخطاء، لكنني سأحاول استخدام الترجمة الآلية إذا قمت بإرسال تقارير الأخطاء بلغة أخرى.</string>
     <string name="settings_audio_quality_info">معلومات جودة الصوت</string>
     <string name="settings_stop_on_dismiss">الإيقاف عند الاستبعاد</string>
     <string name="settings_stop_on_dismiss_summary">إيقاف تشغيل الأغنية عند استبعاد التطبيق من قائمة التطبيقات الحديثة</string>

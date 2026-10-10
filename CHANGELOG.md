@@ -11,6 +11,6 @@
 
 ### Modification
 
-- Nouveau nom et nouvelle icône.
+- Nouveau nom et nouvelle icône ; plus aucune mention de Gramophone dans l'application, hors la page « À propos » qui indique l'origine du projet.
 - Application entièrement traduite en français.
 - « Tout en aléatoire » active aussi « répéter tout ».

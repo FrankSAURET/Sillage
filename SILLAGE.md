@@ -56,5 +56,5 @@ Base : Gramophone, branche `beta`, commit du 2 octobre 2026 (dépôt amont ajout
 - Dépôt : https://github.com/FrankSAURET/Sillage (branche `main`). Frank travaille seul : enregistrer et envoyer directement sur `main`, sans branche ni PR (décision du 9 octobre 2026).
 - Compilation : `docs/compiler-avec-android-studio.md`. Rapports de plantage : tickets GitHub du dépôt, à défaut mail à frank.sauret.pro@gmail.com.
 - L'amont Gramophone n'est pas inclus dans l'historique : le premier commit est un import de son état du 2 octobre 2026. Pour récupérer ses évolutions, ajouter un remote `upstream` et comparer.
-- `readme.md` d'origine est renommé `README_GRAMOPHONE.md` (collision de casse avec `README.md` sous Windows).
+- `readme.md` et `readme_ja.md` d'origine sont dans `A Examiner/` (ménage du 10 octobre 2026), avec les fiches fastlane des autres langues, les notes de version de Gramophone, ses captures d'écran et l'icône de Noël.
 - Après un clonage : `git submodule update --init --recursive`.
