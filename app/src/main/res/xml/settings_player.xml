@@ -50,7 +50,7 @@
             android:widgetLayout="@layout/preference_switch_widget" />
 
         <SwitchPreferenceCompat
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:icon="@drawable/ic_colors"
             android:key="content_based_color"
             android:layout="@layout/preference_switch"

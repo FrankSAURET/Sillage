@@ -46,6 +46,10 @@ Base : Gramophone, branche `beta`, commit du 2 octobre 2026 (dépôt amont ajout
 - Identifiant d'application : `io.github.franksauret.sillage` (choix par défaut, 9 octobre 2026). L'espace de noms Kotlin `org.akanework.gramophone` est conservé pour faciliter la reprise des évolutions amont.
 - Version : `versionName` 2026.10.0, `versionCode` 25 (suite de Gramophone 24).
 
+## Allure : décisions
+
+- Frank n'aime pas Material Design (11 octobre 2026) : on garde les composants Material mais on retouche le thème. Palette fixe générée depuis #0E3A5A (schéma « fidelity »), surfaces crème #F7F4EC en clair et bleu nuit #0E1821 en sombre (`values/colors.xml`, `values-night/colors.xml`). Couleurs dynamiques coupées (`Base.Theme.Gramophone` hérite de `Theme.Material3.DayNight`, `values-v31` hérite de `PreV31.Theme.Gramophone`). Coins 4 et 8 dp (`ShapeAppearance.Sillage.*`), pas d'ombres. « Couleurs selon la jaquette » désactivé par défaut.
+
 ## Traduction : décisions
 
 - Libellés des autorisations système (`grant_images`, `deny_images`, `grant_audio`) : « Photos et vidéos » et « Musique et audio », vérifiés sur appareil le 9 octobre 2026.

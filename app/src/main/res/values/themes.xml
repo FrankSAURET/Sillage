@@ -1,6 +1,16 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Gramophone" parent="Theme.Material3.DynamicColors.DayNight.NoActionBar">
+    <!-- Sillage : palette fixe (pas de couleurs tirées du fond d'écran), coins peu arrondis, sans ombres -->
+    <style name="Base.Theme.Gramophone" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="shapeAppearanceCornerExtraSmall">@style/ShapeAppearance.Sillage.Small</item>
+        <item name="shapeAppearanceCornerSmall">@style/ShapeAppearance.Sillage.Small</item>
+        <item name="shapeAppearanceCornerMedium">@style/ShapeAppearance.Sillage.Small</item>
+        <item name="shapeAppearanceCornerLarge">@style/ShapeAppearance.Sillage.Large</item>
+        <item name="shapeAppearanceCornerExtraLarge">@style/ShapeAppearance.Sillage.Large</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Sillage.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Sillage.Small</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Sillage.Large</item>
+        <item name="elevationOverlayEnabled">false</item>
         <item name="viewInflaterClass">org.akanework.gramophone.logic.ui.ViewCompatInflater</item>
         <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog</item>
         <item name="textAppearanceLargePopupMenu">@style/TextAppearance.App.BodyLarge</item>
@@ -10,7 +20,17 @@
         <item name="alertDialogTheme">@style/AppTheme.AlertDialog</item>
         <item name="system_app_widget_background_radius">28dp</item>
         <item name="system_app_widget_inner_radius">20dp</item>
-        <item name="previewPlayerElevation">1dp</item>
+        <item name="previewPlayerElevation">0dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Sillage.Small" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Sillage.Large" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
     </style>
 
     <style name="PreV31.Theme.Gramophone" parent="Base.Theme.Gramophone">
@@ -176,7 +196,7 @@
     </style>
 
     <style name="AppTheme.AlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
-        <item name="dialogCornerRadius">28dp</item>
+        <item name="dialogCornerRadius">8dp</item>
         <item name="cornerFamily">rounded</item>
         <item name="android:colorBackground">?attr/colorSurface</item>
         <item name="android:layout" tools:ignore="PrivateResource">@layout/m3_alert_dialog</item>

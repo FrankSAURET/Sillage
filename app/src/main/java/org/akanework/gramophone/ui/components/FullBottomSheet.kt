@@ -658,7 +658,7 @@ class FullBottomSheet
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         if (key == "color_accuracy" || key == "content_based_color") {
             if (DynamicColors.isDynamicColorAvailable() &&
-                prefs.getBooleanStrict("content_based_color", true)
+                prefs.getBooleanStrict("content_based_color", false)
             ) {
                 addColorScheme()
             } else {
@@ -1433,7 +1433,7 @@ class FullBottomSheet
                 error(R.drawable.ic_default_cover)
             }
             if (DynamicColors.isDynamicColorAvailable() &&
-                prefs.getBooleanStrict("content_based_color", true)
+                prefs.getBooleanStrict("content_based_color", false)
             ) {
                 addColorScheme()
             }
