@@ -90,6 +90,26 @@ Pour taper simplement `adb` à l'avenir : Paramètres Windows > « Modifier les 
 
 Une fenêtre simule l'écran de la voiture ; Sillage apparaît dans la liste des applications multimédia.
 
-## 8. Ce qu'il faut me renvoyer en cas d'échec
+## 8. Installer la version sans mise au point (release)
+
+La version release est optimisée (R8) et signée avec votre propre clé. Elle porte l'identifiant `io.github.franksauret.sillage` et s'installe à côté de la version debug (`.debug`), sans la remplacer.
+
+1. Créer la clé, une seule fois : **Build > Generate Signed App Bundle or APK**, choisir **APK**, puis **Create new…**. Ranger le fichier `.jks` **hors du dépôt** (par exemple `C:\Users\VOUS\Cles\sillage.jks`), noter le mot de passe du magasin, l'alias et le mot de passe de la clé. Garder ce fichier et ces mots de passe pour toujours : une mise à jour doit être signée avec la même clé, sinon il faut désinstaller (et perdre réglages, scores et file).
+2. Déclarer la clé dans `package.properties` (fichier ignoré par git, à côté de `releaseType=SelfBuilt`) :
+
+```
+AKANE_RELEASE_STORE_FILE=C:/Users/VOUS/Cles/sillage.jks
+AKANE_RELEASE_STORE_PASSWORD=motdepasse
+AKANE_RELEASE_KEY_ALIAS=sillage
+AKANE_RELEASE_KEY_PASSWORD=motdepasse
+```
+
+3. **Build > Select Build Variant** : module `app` sur **release**, puis **File > Sync Project with Gradle Files**.
+4. Téléphone branché, **Run** : Android Studio construit, signe et installe la version release. L'APK reste dans `app/build/outputs/apk/release/`, il peut aussi être copié sur le téléphone et ouvert à la main.
+5. Repasser sur **debug** pour travailler : la construction release est plus lente.
+
+Sans l'étape 2, l'assistant de l'étape 1 sait aussi signer directement : à la fin, choisir la variante **release** ; l'APK signé arrive dans `app/release/`.
+
+## 9. Ce qu'il faut me renvoyer en cas d'échec
 
 Copier le texte de la **première** erreur de l'onglet **Build** (pas la dernière) et le coller dans le fil de discussion du projet.
