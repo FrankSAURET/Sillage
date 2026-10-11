@@ -7,7 +7,6 @@
     <string name="category_dates">วันที่</string>
     <string name="category_playlists">เพลย์ลิสต์</string>
     <string name="unknown_artist">ศิลปินที่ไม่รู้จัก</string>
-    <string name="home_menu_shuffle">สุ่มเพลงทั้งหมด</string>
     <string name="follow_system">ตามระบบ</string>
     <string name="dark">มืด</string>
     <plurals name="songs">

@@ -30,7 +30,7 @@ Chemins relatifs à `app/src/main/res/`.
 
 ## Fiche de publication (F-Droid, GitHub, Play Store)
 
-Dans `fastlane/metadata/android/en-US/images/` (dossier à recréer ; celles de Gramophone sont dans `A Examiner/`) :
+Dans `fastlane/metadata/android/en-US/images/` (et `fr-FR/images/` pour la version française ; une langue sans image reprend celles de `en-US`). L'icône et la bannière existent déjà, dessinées d'après l'icône provisoire ; il manque les captures d'écran :
 
 | Image | Fichier | Taille |
 |---|---|---|

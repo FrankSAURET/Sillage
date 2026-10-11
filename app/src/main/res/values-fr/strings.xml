@@ -153,7 +153,7 @@
     <string name="current_playlist">Playlist actuelle</string>
     <string name="fgs_failed_text">Cliquez ici pour ouvrir l\'application et continuer la lecture</string>
     <string name="fgs_failed_channel">La reprise de la lecture a échoué</string>
-    <string name="home_menu_shuffle">Tout jouer aléatoirement</string>
+    <string name="home_menu_shuffle">Nouvelle liste aléatoire</string>
     <string name="lyric_widget_description">Widget qui affiche les paroles des médias joués</string>
     <string name="settings_preference_category_home">Écran d\'accueil</string>
     <string name="position_slider">Position du défilement</string>
@@ -547,4 +547,5 @@
     <string name="skip_review_keep">Garder</string>
     <string name="skip_review_later">Plus tard</string>
     <string name="skip_review_none">Aucun morceau n’atteint le seuil</string>
+    <string name="perpetual_shuffle">Tous les morceaux en aléatoire</string>
 </resources>

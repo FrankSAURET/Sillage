@@ -83,6 +83,7 @@ import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
 import org.akanework.gramophone.BuildConfig
 import org.akanework.gramophone.R
+import org.akanework.gramophone.logic.setMediaItemsWithTitle
 import org.akanework.gramophone.logic.dpToPx
 import org.akanework.gramophone.logic.enableEdgeToEdgeProperly
 import org.akanework.gramophone.logic.getBooleanStrict
@@ -687,8 +688,22 @@ class MainActivity : BaseActivity() {
             val query = intent.getStringExtra("item_name") ?: ""
             willAutoPlayLater = true
             controllerViewModel.addControllerCallback(lifecycle) { controller, _ ->
+                if (query.isEmpty()) {
+                    // Sillage : sans recherche, nouvelle file perpétuelle de tous les morceaux
+                    dispose()
+                    lifecycleScope.launch {
+                        // attend la première lecture de la bibliothèque sans bloquer l'affichage
+                        val songs = reader.songListFlow.first { it.isNotEmpty() }
+                        controller.setMediaItemsWithTitle(
+                            songs, title = getString(R.string.perpetual_shuffle),
+                            shuffleEnabled = true, repeatMode = Player.REPEAT_MODE_ALL,
+                        )
+                        controller.prepare()
+                        controller.play()
+                    }
+                    return@addControllerCallback
+                }
                 controller.shuffleModeEnabled = true
-                // Sillage : « tout en aléatoire » est perpétuel (re-mélange à chaque tour)
                 controller.repeatMode = Player.REPEAT_MODE_ALL
                 controller.setMediaItem(
                     MediaItem.Builder()

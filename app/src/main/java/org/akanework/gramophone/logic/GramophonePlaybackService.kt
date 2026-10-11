@@ -1607,24 +1607,9 @@ class GramophonePlaybackService : MediaLibraryService(), MediaSessionService.Lis
                     Random.nextLong()
                 )
             )
-            for (controller in mediaSession!!.connectedControllers) {
-                val customCommand = SessionCommand(CLIENT_QB_REFRESH_LIST, Bundle.EMPTY).apply {
-                    val plr = endedWorkaroundPlayer!!
-                    customExtras.putBinder(
-                        "activeQueue",
-                        MultiQueueList(listOf(plr.getActiveQueue()))
-                    )
-                    customExtras.putBinder(
-                        "inactiveQueues",
-                        MultiQueueList(qb.getInactiveQueues().map { it.copy(queue = ArrayList()) })
-                    )
-                }
-                mediaSession!!.sendCustomCommand(
-                    controller,
-                    customCommand,
-                    Bundle.EMPTY
-                )
-            }
+            broadcastQueueRefresh()
+            // Sillage : la file perpétuelle est vide, on la refait avec la bibliothèque actuelle
+            if (isPerpetualQueue()) renewPerpetualShuffle()
         }
 
         lastPlayedManager.save()
@@ -1686,11 +1671,68 @@ class GramophonePlaybackService : MediaLibraryService(), MediaSessionService.Lis
                 // l'utilisateur a pu lancer autre chose entre-temps : on ne l'écrase pas
                 if (mediaSession == null || !player.currentTimeline.isEmpty) return@withContext
                 player.setMediaItems(
-                    list, C.INDEX_UNSET, C.TIME_UNSET, getString(R.string.shuffle_all),
+                    list, C.INDEX_UNSET, C.TIME_UNSET, getString(R.string.perpetual_shuffle),
                     pinned = false, original = true, ended = false,
                     repeatMode = Player.REPEAT_MODE_ALL, shuffleModeEnabled = true,
                     newShuffleOrder = null, playbackParameters = null,
                 )
+            }
+        }
+    }
+
+    /** Sillage : la file perpétuelle se reconnaît à son titre. */
+    private fun isPerpetualQueue() =
+        endedWorkaroundPlayer?.currentTitle == getString(R.string.perpetual_shuffle)
+
+    private fun broadcastQueueRefresh() {
+        val session = mediaSession ?: return
+        for (controller in session.connectedControllers) {
+            val customCommand = SessionCommand(CLIENT_QB_REFRESH_LIST, Bundle.EMPTY).apply {
+                val plr = endedWorkaroundPlayer!!
+                customExtras.putBinder(
+                    "activeQueue",
+                    MultiQueueList(listOf(plr.getActiveQueue()))
+                )
+                customExtras.putBinder(
+                    "inactiveQueues",
+                    MultiQueueList(qb.getInactiveQueues().map { it.copy(queue = ArrayList()) })
+                )
+            }
+            session.sendCustomCommand(controller, customCommand, Bundle.EMPTY)
+        }
+    }
+
+    /**
+     * Sillage : appelé quand le dernier morceau de la file perpétuelle commence. Recharge tous les
+     * morceaux de la bibliothèque (nouveaux fichiers, effacements et exclusions de dossiers pris en
+     * compte) sans couper le morceau en cours, qui devient le premier du nouveau tirage.
+     */
+    private fun renewPerpetualShuffle() {
+        scope.launch(Dispatchers.Default) {
+            val songs = gramophoneApplication.reader.songListFlow.first()
+            if (songs.isEmpty()) return@launch
+            val list = mapMediaItemsForFavorites(songs)
+            withContext(Dispatchers.Main) {
+                val player = endedWorkaroundPlayer ?: return@withContext
+                if (mediaSession == null || !isPerpetualQueue()) return@withContext
+                val currentId = player.currentMediaItem?.mediaId ?: return@withContext
+                // morceau en cours absent de la bibliothèque : on garde l'ancienne file re-mélangée
+                val index = list.indexOfFirst { it.mediaId == currentId }
+                if (index < 0) return@withContext
+                player.setMediaItemsSeamlessly(
+                    list, index, null, getString(R.string.perpetual_shuffle),
+                    pinned = false, original = true, ended = false,
+                    repeatMode = Player.REPEAT_MODE_ALL, shuffleModeEnabled = true,
+                    newShuffleOrder = null, playbackParameters = null,
+                )
+                // nouveau tirage qui commence par le morceau en cours
+                player.exoPlayer.setShuffleOrder(
+                    CircularShuffleOrder(
+                        player, player.currentMediaItemIndex,
+                        player.exoPlayer.mediaItemCount, Random.nextLong()
+                    )
+                )
+                broadcastQueueRefresh()
             }
         }
     }

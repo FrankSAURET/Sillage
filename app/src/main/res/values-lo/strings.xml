@@ -3,7 +3,6 @@
     <string name="app_name">Sillage</string>
     <string name="home_menu_search">ຊອກຫາ</string>
     <string name="home_menu_settings">ການຕັ້ງຄ່າ</string>
-    <string name="home_menu_shuffle">ສຸ່ມທັງໝົດ</string>
     <string name="home_menu_refresh">ໂຫຼດຄືນໃໝ່</string>
     <string name="category_songs">ເພງ</string>
     <string name="category_albums">ອັລບັມ</string>

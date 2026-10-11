@@ -27,6 +27,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.media3.common.Player
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.view.ViewCompat
@@ -198,8 +199,10 @@ class ViewPagerFragment : BaseFragment(true) {
                         ?.also {
                             controller?.setMediaItemsWithTitle(
                                 it,
-                                title = requireContext().getString(R.string.category_songs),
+                                // Sillage : nouvelle file perpétuelle (renouvelée par le service à la fin)
+                                title = requireContext().getString(R.string.perpetual_shuffle),
                                 shuffleEnabled = true,
+                                repeatMode = Player.REPEAT_MODE_ALL,
                             )
                             controller?.prepare()
                             controller?.play()

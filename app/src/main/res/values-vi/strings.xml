@@ -143,7 +143,6 @@
     <string name="album_covers_enhance">Tải ảnh album nâng cao</string>
     <string name="sort_by_release_date">Năm phát hành</string>
     <string name="timer_expiry">Hẹn giờ ngủ sẽ tạm dừng bài hát vào lúc %s</string>
-    <string name="home_menu_shuffle">Trộn tất cả</string>
     <string name="divider">Thanh chia màn hình</string>
     <string name="dialog_bitrate">Tốc độ bit</string>
     <string name="bitrate_unknown">Tốc độ bit chưa biết</string>

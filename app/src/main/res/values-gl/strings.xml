@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <string name="home_menu_search">Buscar</string>
-    <string name="home_menu_shuffle">Barallar todo</string>
     <string name="home_menu_refresh">Actualizar</string>
     <string name="category_songs">Cancións</string>
     <string name="category_albums">Álbums</string>

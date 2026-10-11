@@ -163,7 +163,6 @@
     <string name="current_playlist">قائمة التشغيل الحالية</string>
     <string name="timer">مؤقت النوم</string>
     <string name="timer_expiry">سيُوقِف مؤقِّت النوم الموسيقى في %s</string>
-    <string name="home_menu_shuffle">خلط الكل</string>
     <string name="scroll_to_songs">اسحب إلى الأغاني</string>
     <string name="settings_status_bar_lyrics_summary">فعّل طريقة MeiZu في عرض الكلمات في شريط الحالات (مدعومة فقط على بعض الأجهزة)</string>
     <string name="settings_status_bar_lyrics_title">كلمات شريط الحالة</string>
