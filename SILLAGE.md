@@ -48,7 +48,7 @@ Base : Gramophone, branche `beta`, commit du 2 octobre 2026 (dépôt amont ajout
 
 ## Allure : décisions
 
-- Frank n'aime pas Material Design (11 octobre 2026) : on garde les composants Material mais on retouche le thème. Palette fixe générée depuis #0E3A5A (schéma « fidelity »), surfaces crème #F7F4EC en clair et bleu nuit #0E1821 en sombre (`values/colors.xml`, `values-night/colors.xml`). Couleurs dynamiques coupées (`Base.Theme.Gramophone` hérite de `Theme.Material3.DayNight`, `values-v31` hérite de `PreV31.Theme.Gramophone`). Coins 4 et 8 dp (`ShapeAppearance.Sillage.*`), pas d'ombres. « Couleurs selon la jaquette » désactivé par défaut.
+- Frank n'aime pas Material Design (11 octobre 2026) : on garde les composants Material mais on retouche le thème. Palette fixe générée avec materialyoucolor (schéma « fidelity ») depuis le bleu du logo de Frank #1F6BD1, tertiaire depuis son violet #A972EB (`values/colors.xml`, `values-night/colors.xml`). Couleurs dynamiques coupées (`Base.Theme.Gramophone` hérite de `Theme.Material3.DayNight`, `values-v31` hérite de `PreV31.Theme.Gramophone`). Coins 4 et 8 dp (`ShapeAppearance.Sillage.*`), pas d'ombres. « Couleurs selon la jaquette » désactivé par défaut.
 
 ## Traduction : décisions
 

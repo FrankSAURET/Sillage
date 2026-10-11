@@ -4,13 +4,13 @@
 2. ⬜ Vérifier la nouvelle allure en clair et en sombre (non compilée) ; dire ce qui déplaît encore (police, espacements, boutons…).
 3. ⬜ Bouton « efface ce morceau » dans Android Auto.
 4. ⬜ Captures d'écran de la fiche fastlane : `fastlane/metadata/android/en-US/images/phoneScreenshots/1.png`, `2.png`… (à prendre par Frank).
-5. ⏳ Icône : dessin provisoire (croche et sillage de vagues).
+5. ⬜ Icône de l'application : remplacer le dessin provisoire par le logo de Frank (`docs/Sillage.svg`, dégradé turquoise-bleu, note et ondes), pour l'instant seulement dans la fiche fastlane française.
 6. ⏳ Autres langues que l'anglais et le français : les textes modifiés pour Sillage (rapport de plantage, dossiers racines, type de paquet) y sont retirés et s'affichent en anglais.
 7. ⏳ `A Examiner/` : fichiers de Gramophone mis de côté le 10 octobre 2026, à trier par Frank.
 
 # 2026.10.0 (prochaine publication)
 
-1. ✅ Allure : thème retouché sans Material You — palette fixe bleu nuit et crème (générée depuis #0E3A5A avec materialyoucolor, surfaces réglées à la main), coins 4/8 dp, ombres retirées, couleurs selon la jaquette désactivées par défaut.
+1. ✅ Allure : thème retouché sans Material You — palette fixe générée avec materialyoucolor depuis le bleu du logo (#1F6BD1) et son violet (#A972EB) en tertiaire, coins 4/8 dp, ombres retirées, couleurs selon la jaquette désactivées par défaut.
 2. ✅ Liste aléatoire perpétuelle : la file porte le titre `perpetual_shuffle` ; quand son dernier morceau commence, `renewPerpetualShuffle` recharge toute la bibliothèque (liste blanche et liste noire appliquées) sans couper le morceau en cours, qui ouvre le nouveau tirage. Menu « Nouvelle liste aléatoire » et raccourci du lanceur refont la liste. Une autre file (album, dossier) en aléatoire avec « répéter tout » garde le simple re-mélange de Gramophone.
 3. ✅ Fiche fastlane : `icon.png` (512 px) et `featureGraphic.png` (1024 × 500, texte anglais et français) dans `en-US/images` et `fr-FR/images`.
 4. ✅ Score de skip testé par Frank (10 octobre 2026).

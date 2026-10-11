@@ -12,7 +12,7 @@
 
 ### Modification
 
-- Nouvelle allure : couleurs fixes bleu nuit et crème reprises de l'icône (au lieu des couleurs tirées du fond d'écran), coins peu arrondis, sans ombres. Les couleurs du lecteur ne suivent plus la jaquette par défaut (réglage « Lecteur » pour les rétablir).
+- Nouvelle allure : couleurs fixes bleues et violettes reprises du logo (au lieu des couleurs tirées du fond d'écran), coins peu arrondis, sans ombres. Les couleurs du lecteur ne suivent plus la jaquette par défaut (réglage « Lecteur » pour les rétablir).
 - Nouveau nom et nouvelle icône ; plus aucune mention de Gramophone dans l'application, hors la page « À propos » qui indique l'origine du projet.
 - Application entièrement traduite en français.
 - Le menu « Tout jouer aléatoirement » devient « Nouvelle liste aléatoire » ; le raccourci « tout en aléatoire » du lanceur fait de même.
