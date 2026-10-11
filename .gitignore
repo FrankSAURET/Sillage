@@ -15,3 +15,4 @@ local.properties
 # Instructions personnelles locales (non versionnées)
 CLAUDE.local.md
 .claude/settings.local.json
+.vscode/settings.json
