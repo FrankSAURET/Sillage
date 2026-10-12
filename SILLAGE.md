@@ -40,6 +40,7 @@ Base : Gramophone, branche `beta`, commit du 2 octobre 2026 (dépôt amont ajout
 4. [fait] Aléatoire perpétuel par défaut. File reconnue à son titre (`perpetual_shuffle`) ; refaite depuis la bibliothèque quand son dernier morceau commence (`renewPerpetualShuffle`), ou par le menu « Nouvelle liste aléatoire ».
 5. [fait, à tester] Score de skip et proposition d'effacement (`logic/utils/SkipScores.kt`, `ui/SkipReview.kt`).
 6. Bouton « efface ce morceau » dans Android Auto.
+7. [fait, à tester] Android Auto : premier onglet « Auto » avec la « Liste aléatoire » (`LibraryTreeLoader.AUTO_TAB_ID`, `SHUFFLE_ALL_ID`), réglage `auto_shuffle` (Comportement) ; un morceau joué ou passé sort de la liste aléatoire (`removeFromPerpetualQueue`). Logo de Frank en icône d'application.
 
 ## Identité : décisions
 

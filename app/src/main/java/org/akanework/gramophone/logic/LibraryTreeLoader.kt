@@ -41,6 +41,13 @@ class LibraryTreeLoader(
     private val prefs: SharedPreferences
 ) {
 
+    companion object {
+        /** Sillage : premier onglet d'Android Auto, contient la liste aléatoire. */
+        const val AUTO_TAB_ID = "auto"
+        /** Sillage : élément jouable qui lance la liste aléatoire perpétuelle. */
+        const val SHUFFLE_ALL_ID = "shuffle_all"
+    }
+
     private val tag = "LibraryTreeLoader"
 
     data class ExpandedMediaItems(
@@ -65,6 +72,11 @@ class LibraryTreeLoader(
         return when (id) {
             else if id.startsWith("root_") -> createFolderItem(id, "", MediaMetadata.MEDIA_TYPE_FOLDER_MIXED)
             else if id.startsWith("more_") -> createFolderItem(id, context.getString(R.string.more), MediaMetadata.MEDIA_TYPE_FOLDER_MIXED)
+            AUTO_TAB_ID -> createFolderItem(AUTO_TAB_ID, context.getString(R.string.auto_tab), MediaMetadata.MEDIA_TYPE_FOLDER_MIXED)
+            SHUFFLE_ALL_ID -> createFolderItem(
+                SHUFFLE_ALL_ID, context.getString(R.string.perpetual_shuffle),
+                MediaMetadata.MEDIA_TYPE_PLAYLIST, isPlayable = true, isBrowsable = false
+            )
             "songs" -> createFolderItem("songs", context.getString(R.string.category_songs), MediaMetadata.MEDIA_TYPE_FOLDER_MIXED)
             "albums" -> createFolderItem("albums", context.getString(R.string.category_albums), MediaMetadata.MEDIA_TYPE_FOLDER_ALBUMS, extras = gridExtras)
             "artists" -> createFolderItem("artists", context.getString(R.string.category_artists), MediaMetadata.MEDIA_TYPE_FOLDER_ARTISTS, extras = gridExtras)
@@ -196,14 +208,17 @@ class LibraryTreeLoader(
             val list: List<MediaItem> = when (parentId) {
                     else if parentId.startsWith("root_") -> {
                         val tabCount = parentId.substring("root_".length).toInt()
-                        val tabs = getEnabledTabs()
-                        if (tabs.size <= tabCount) tabs.map { getCategoryItem(mapTabToMediaId(it))!! }
-                        else tabs.take(tabCount - 1).map { getCategoryItem(mapTabToMediaId(it))!! } + getCategoryItem("more_$tabCount")!!
+                        // Sillage : « Auto » est toujours le premier onglet
+                        val tabs = listOf(AUTO_TAB_ID) + getEnabledTabs().map { mapTabToMediaId(it) }
+                        if (tabs.size <= tabCount) tabs.map { getCategoryItem(it)!! }
+                        else tabs.take(tabCount - 1).map { getCategoryItem(it)!! } + getCategoryItem("more_$tabCount")!!
                     }
                     else if parentId.startsWith("more_") -> {
                         val tabCount = parentId.substring("more_".length).toInt()
-                        getEnabledTabs().drop(tabCount - 1).map { getCategoryItem(mapTabToMediaId(it))!! }
+                        (listOf(AUTO_TAB_ID) + getEnabledTabs().map { mapTabToMediaId(it) })
+                            .drop(tabCount - 1).map { getCategoryItem(it)!! }
                     }
+                    AUTO_TAB_ID -> listOf(getCategoryItem(SHUFFLE_ALL_ID)!!)
                     "albums" -> sortList(app.reader.albumListFlow.first(), LibraryAdapterTypes.ALBUM, Sorter(AlbumAdapter.StoreAlbumHelper, null)).map { mapDomainItemToMediaItem(it)!! }
                     "artists" -> sortList(app.reader.artistListFlow.first(), LibraryAdapterTypes.ARTIST, Sorter(ArtistAdapter.StoreArtistHelper, null)).map { mapDomainItemToMediaItem(it)!! }
                     "songs" -> queueWithTitle(sortList(app.reader.songListFlow.first(), LibraryAdapterTypes.SONG, Sorter(SongAdapter.MediaItemHelper, null)), context.getString(R.string.category_songs))
@@ -349,7 +364,10 @@ class LibraryTreeLoader(
             }
 
             val expanded = getSongsInParent(item.mediaId)
-            if (expanded.isNotEmpty()) {
+            if (item.mediaId == SHUFFLE_ALL_ID) {
+                // Sillage : toute la bibliothèque, dans un ordre tiré au hasard
+                resultList.addAll(app.reader.songListFlow.first().shuffled())
+            } else if (expanded.isNotEmpty()) {
                 resultList.addAll(expanded)
             } else if (item.mediaId != MediaItem.DEFAULT_MEDIA_ID) {
                 if (item.requestMetadata != MediaItem.RequestMetadata.EMPTY) {

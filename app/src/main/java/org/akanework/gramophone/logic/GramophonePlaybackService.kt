@@ -223,6 +223,10 @@ class GramophonePlaybackService : MediaLibraryService(), MediaSessionService.Lis
     private lateinit var prefs: SharedPreferences
     private var lastSentHighlightedLyric: String? = null
     private var lastSentNotificationLyric: String? = null
+    // Sillage : liste aléatoire
+    private var lastPerpetualMediaId: String? = null
+    private var pendingShuffleSetup = false
+    private var autoShuffleArmed = false
     private lateinit var afFormatTracker: AfFormatTracker
     private lateinit var rgAp: ReplayGainAudioProcessor
     private var rgMode = 0 // 0 = disabled, 1 = track, 2 = album, 3 = smart
@@ -859,6 +863,8 @@ class GramophonePlaybackService : MediaLibraryService(), MediaSessionService.Lis
             || session.isAutoCompanionController(controller)
             || session.isAutomotiveController(controller)
         ) {
+            if (session.isAutoCompanionController(controller) || session.isAutomotiveController(controller))
+                autoShuffleArmed = true
             if (this.controller?.currentTimeline?.isEmpty == false) {
                 builder.setMediaButtonPreferences(
                     ImmutableList.of(
@@ -1593,6 +1599,16 @@ class GramophonePlaybackService : MediaLibraryService(), MediaSessionService.Lis
         lastSentNotificationLyric = null
         lastSentHighlightedLyric = null
 
+        // Sillage : dans la liste aléatoire, un morceau joué ou passé sort de la liste
+        val leftId = lastPerpetualMediaId
+        lastPerpetualMediaId = mediaItem?.mediaId
+        if (leftId != null && leftId != mediaItem?.mediaId && isPerpetualQueue() &&
+            (reason == Player.MEDIA_ITEM_TRANSITION_REASON_AUTO ||
+                    reason == Player.MEDIA_ITEM_TRANSITION_REASON_SEEK)
+        ) {
+            handler.post { removeFromPerpetualQueue(leftId) }
+        }
+
         // reshuffle queue when shuffle AND repeat all are enabled
         val player = endedWorkaroundPlayer
         if (player != null && player.currentMediaItemIndex == player.exoPlayer.shuffleOrder.lastIndex &&
@@ -1684,6 +1700,51 @@ class GramophonePlaybackService : MediaLibraryService(), MediaSessionService.Lis
     private fun isPerpetualQueue() =
         endedWorkaroundPlayer?.currentTitle == getString(R.string.perpetual_shuffle)
 
+    /** Sillage : retire de la liste aléatoire un morceau déjà joué ou passé (jamais le morceau en cours). */
+    private fun removeFromPerpetualQueue(mediaId: String) {
+        val player = endedWorkaroundPlayer ?: return
+        if (!isPerpetualQueue() || player.mediaItemCount <= 1) return
+        for (i in 0 until player.mediaItemCount) {
+            if (player.getMediaItemAt(i).mediaId == mediaId) {
+                if (i != player.currentMediaItemIndex) player.removeMediaItem(i)
+                return
+            }
+        }
+    }
+
+    /** Sillage : donne à la file qui vient d'être posée les réglages de la liste aléatoire. */
+    private fun applyPerpetualQueueSettings(player: EndedWorkaroundPlayer) {
+        player.currentTitle = getString(R.string.perpetual_shuffle)
+        player.repeatMode = Player.REPEAT_MODE_ALL
+        player.shuffleModeEnabled = true
+        player.exoPlayer.setShuffleOrder(
+            CircularShuffleOrder(
+                player, player.currentMediaItemIndex,
+                player.exoPlayer.mediaItemCount, Random.nextLong()
+            )
+        )
+    }
+
+    /** Sillage : lance tout de suite une nouvelle liste aléatoire (Android Auto, réglage « par défaut »). */
+    private fun playShuffleNow() {
+        scope.launch(Dispatchers.Default) {
+            val songs = gramophoneApplication.reader.songListFlow.first { it.isNotEmpty() }
+            val list = mapMediaItemsForFavorites(songs.shuffled())
+            withContext(Dispatchers.Main) {
+                val player = endedWorkaroundPlayer ?: return@withContext
+                if (mediaSession == null) return@withContext
+                player.setMediaItems(
+                    list, C.INDEX_UNSET, C.TIME_UNSET, getString(R.string.perpetual_shuffle),
+                    pinned = false, original = true, ended = false,
+                    repeatMode = Player.REPEAT_MODE_ALL, shuffleModeEnabled = true,
+                    newShuffleOrder = null, playbackParameters = null,
+                )
+                player.prepare()
+                player.play()
+            }
+        }
+    }
+
     private fun broadcastQueueRefresh() {
         val session = mediaSession ?: return
         for (controller in session.connectedControllers) {
@@ -1767,6 +1828,10 @@ class GramophonePlaybackService : MediaLibraryService(), MediaSessionService.Lis
 
     override fun onTimelineChanged(timeline: Timeline, reason: @Player.TimelineChangeReason Int) {
         if (reason == Player.TIMELINE_CHANGE_REASON_PLAYLIST_CHANGED) {
+            if (pendingShuffleSetup && !timeline.isEmpty) {
+                pendingShuffleSetup = false
+                endedWorkaroundPlayer?.let { applyPerpetualQueueSettings(it) }
+            }
             lastPlayedManager.allowSavingState = true
             lastPlaylistLoaded.complete(Unit)
             refreshMediaButtonCustomLayout()
@@ -2035,6 +2100,21 @@ class GramophonePlaybackService : MediaLibraryService(), MediaSessionService.Lis
         pageSize: Int,
         params: LibraryParams?
     ): ListenableFuture<LibraryResult<ImmutableList<MediaItem>>> {
+        // Sillage : réglage « Lancer la liste aléatoire par défaut », une fois par connexion d'Android Auto
+        if (parentId == LibraryTreeLoader.AUTO_TAB_ID && autoShuffleArmed &&
+            prefs.getBooleanStrict("auto_shuffle", false)
+        ) {
+            autoShuffleArmed = false
+            handler.post {
+                val player = endedWorkaroundPlayer
+                if (player != null && !player.isPlaying) {
+                    if (isPerpetualQueue() && !player.currentTimeline.isEmpty) {
+                        player.prepare()
+                        player.play()
+                    } else playShuffleNow()
+                }
+            }
+        }
         return libraryTreeLoader.getChildren(parentId, page, pageSize, params)
     }
 
@@ -2083,6 +2163,8 @@ class GramophonePlaybackService : MediaLibraryService(), MediaSessionService.Lis
         startIndex: Int,
         startPositionMs: Long
     ): ListenableFuture<MediaSession.MediaItemsWithStartPosition> = lifecycleScope.future(Dispatchers.Default) {
+        if (mediaItems.firstOrNull()?.mediaId == LibraryTreeLoader.SHUFFLE_ALL_ID)
+            pendingShuffleSetup = true // réglages posés dans onTimelineChanged
         val expanded = libraryTreeLoader.addMediaItems(mediaItems).await()
         val mapped = mapMediaItemsForFavorites(expanded.mediaItems)
         MediaSession.MediaItemsWithStartPosition(mapped, expanded.startIndex ?: startIndex, startPositionMs)

@@ -8,9 +8,9 @@ Toutes les images de base de l'application et de la fiche de publication, avec l
 2. Dans Android Studio, panneau **Project** (vue « Android »), clic droit sur `app` > **New > Image Asset**.
 3. **Icon type** : « Launcher Icons (Adaptive and Legacy) ». **Name** : `ic_launcher` (garder ce nom).
 4. Onglet **Foreground Layer** : choisir le fichier. Onglet **Background Layer** : une couleur. Onglet **Options** : laisser « Legacy Icon » coché.
-5. **Next** puis **Finish** : l'assistant remplace d'un coup `drawable/ic_launcher_foreground.xml`, `mipmap-anydpi-v26/ic_launcher.xml`, `values/ic_launcher_background.xml` et les `mipmap-*/ic_launcher.webp`.
+5. **Next** puis **Finish** : l'assistant remplace d'un coup les fichiers d'icône d'application (`mipmap-*`, `mipmap-anydpi-v26/ic_launcher.xml`, fond). Remettre ensuite le fond `@drawable/ic_launcher_bg` dans `mipmap-anydpi-v26/ic_launcher.xml` et `ic_launcher_round.xml` (sinon la version de mise au point perd son fond ambre).
 
-Ensuite, refaire à la main les versions monochromes (voir le tableau) : l'assistant ne les touche pas.
+Ensuite, refaire à la main les petites icônes monochromes de notification (voir le tableau) : l'assistant ne les touche pas.
 
 ## Où se trouve chaque image
 
@@ -18,14 +18,14 @@ Chemins relatifs à `app/src/main/res/`.
 
 | Image | Fichier(s) | Format |
 |---|---|---|
-| Icône adaptative, premier plan | `drawable/ic_launcher_foreground.xml` | vecteur 108 × 108 dp |
-| Icône adaptative, fond | `values/ic_launcher_background.xml` (couleur `ic_launcher_background`) | couleur |
-| Icône pour Android 6 et 7 | `mipmap-mdpi` à `mipmap-xxxhdpi/ic_launcher.webp` | 48, 72, 96, 144, 192 px |
-| Icône à thème (Android 13+) | `mipmap-anydpi-v26/ic_launcher.xml`, ligne `monochrome` (réutilise le premier plan) | vecteur |
-| Petite icône des notifications et d'Android Auto | `drawable/ic_gramophone_monochrome.xml` et `drawable/ic_gramophone_mono16.xml` (nom interne conservé) | vecteur blanc sur transparent |
+| Icône adaptative, premier plan | `mipmap-*/ic_launcher_foreground.webp` (logo de `docs/Sillage.svg`, sans fond, dans les 60 % centraux) | 108 dp : 108 à 432 px |
+| Icône adaptative, fond | `drawable/ic_launcher_bg.xml` (dégradé turquoise-bleu) ; version de mise au point : `app/src/debug/res/drawable/ic_launcher_bg.xml` | vecteur |
+| Icône pour Android 6 et 7 | `mipmap-mdpi` à `mipmap-xxxhdpi/ic_launcher.webp` et `ic_launcher_round.webp` | 48, 72, 96, 144, 192 px |
+| Icône à thème (Android 13+) | `mipmap-*/ic_launcher_monochrome.webp` (silhouette du logo) | webp transparent |
+| Petite icône des notifications et d'Android Auto | `drawable-*/ic_gramophone_monochrome.png` (24 dp) et `ic_gramophone_mono16.png` (16 dp), nom interne conservé | png blanc sur transparent |
+| Logo de la boîte « À propos » | `drawable-nodpi/ic_logo.webp` | webp 512 px |
 | Écran de démarrage (Android 11 et moins) | `drawable/ic_splash_foreground.xml`, couleur `splash_foreground_color` dans `values/colors.xml` | vecteur |
-| Logo de la boîte « À propos » | réutilise `drawable/ic_launcher_foreground.xml`, teinté par le thème | — |
-| Icône de la version de mise au point | `app/src/debug/res/values/ic_launcher_background.xml` (fond ambre) | couleur |
+| Fond ambre de la version de mise au point (écran de démarrage) | `app/src/debug/res/values/ic_launcher_background.xml` | couleur |
 | Raccourci « tout en aléatoire » | `mipmap-*/ic_shortcut_shuffle.*` et `drawable/ic_shortcut_shuffle_foreground.xml` | générique, pas à changer |
 
 ## Fiche de publication (F-Droid, GitHub, Play Store)

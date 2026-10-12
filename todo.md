@@ -1,15 +1,16 @@
 # À faire
-
+1. ⬜ Tester le logo de Frank en icône (non compilé) : lanceur, icône à thème Android 13+, notification, Android Auto (désinstaller puis réinstaller si l'ancienne icône reste en cache) ; dire si le motif est trop petit ou trop grand dans le cercle.
+1. ⬜ Tester Android Auto (non compilé) : onglet « Auto » en premier avec « Liste aléatoire » ; réglage Comportement > « Lancer la liste aléatoire par défaut » ; vérifier qu'un morceau joué ou passé disparaît de la file.
 1. ⬜ Tester la liste aléatoire perpétuelle (non compilée) : menu « Nouvelle liste aléatoire », puis aller au dernier morceau de la file et vérifier qu'une nouvelle liste démarre sans couper le morceau.
-2. ⬜ Vérifier la nouvelle allure en clair et en sombre (non compilée) ; dire ce qui déplaît encore (police, espacements, boutons…).
-3. ⬜ Bouton « efface ce morceau » dans Android Auto.
-4. ⬜ Captures d'écran de la fiche fastlane : `fastlane/metadata/android/en-US/images/phoneScreenshots/1.png`, `2.png`… (à prendre par Frank).
-5. ⬜ Icône de l'application : remplacer le dessin provisoire par le logo de Frank (`docs/Sillage.svg`, dégradé turquoise-bleu, note et ondes), pour l'instant seulement dans la fiche fastlane française.
-6. ⏳ Autres langues que l'anglais et le français : les textes modifiés pour Sillage (rapport de plantage, dossiers racines, type de paquet) y sont retirés et s'affichent en anglais.
-7. ⏳ `A Examiner/` : fichiers de Gramophone mis de côté le 10 octobre 2026, à trier par Frank.
+1. ⬜ Bouton « efface ce morceau » dans Android Auto.
+
+
+1. ⏳ Autres langues que l'anglais et le français : les textes modifiés pour Sillage (rapport de plantage, dossiers racines, type de paquet) y sont retirés et s'affichent en anglais.
+
 
 # 2026.10.0 (prochaine publication)
 
+0. ✅ Android Auto : icône = logo de Frank (`mipmap-*` adaptatif, monochrome, anciens lanceurs ; petites icônes de notification en png ; fond `drawable/ic_launcher_bg.xml`, ambre en debug ; boîte « À propos » `ic_logo.webp`). Premier onglet « Auto » avec l'élément « Liste aléatoire » (`shuffle_all`) qui lance toute la bibliothèque en aléatoire perpétuel. Réglage Comportement `auto_shuffle` : lance la liste dès l'ouverture de l'onglet Auto, une fois par connexion, si rien n'est en lecture. File renommée « Liste aléatoire » ; un morceau joué ou passé en sort (`removeFromPerpetualQueue`), liste refaite quand il n'en reste qu'un. Non compilé.
 1. ✅ Allure : thème retouché sans Material You — palette fixe générée avec materialyoucolor depuis le bleu du logo (#1F6BD1) et son violet (#A972EB) en tertiaire, coins 4/8 dp, ombres retirées, couleurs selon la jaquette désactivées par défaut.
 2. ✅ Liste aléatoire perpétuelle : la file porte le titre `perpetual_shuffle` ; quand son dernier morceau commence, `renewPerpetualShuffle` recharge toute la bibliothèque (liste blanche et liste noire appliquées) sans couper le morceau en cours, qui ouvre le nouveau tirage. Menu « Nouvelle liste aléatoire » et raccourci du lanceur refont la liste. Une autre file (album, dossier) en aléatoire avec « répéter tout » garde le simple re-mélange de Gramophone.
 3. ✅ Fiche fastlane : `icon.png` (512 px) et `featureGraphic.png` (1024 × 500, texte anglais et français) dans `en-US/images` et `fr-FR/images`.

@@ -547,5 +547,8 @@
     <string name="skip_review_keep">Garder</string>
     <string name="skip_review_later">Plus tard</string>
     <string name="skip_review_none">Aucun morceau n’atteint le seuil</string>
-    <string name="perpetual_shuffle">Tous les morceaux en aléatoire</string>
+    <string name="perpetual_shuffle">Liste aléatoire</string>
+    <string name="auto_tab">Auto</string>
+    <string name="settings_auto_shuffle">Lancer la liste aléatoire par défaut</string>
+    <string name="settings_auto_shuffle_summary">Android Auto lance la liste aléatoire dès l’ouverture de l’onglet Auto, si rien n’est en cours de lecture</string>
 </resources>

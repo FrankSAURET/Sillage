@@ -1319,5 +1319,8 @@ supporting local search. This string is displayed in the search bar when using G
     <string name="skip_review_keep">Keep</string>
     <string name="skip_review_later">Later</string>
     <string name="skip_review_none">No song reaches the threshold</string>
-    <string name="perpetual_shuffle">All songs, shuffled</string>
+    <string name="perpetual_shuffle">Shuffle list</string>
+    <string name="auto_tab">Auto</string>
+    <string name="settings_auto_shuffle">Start the shuffle list by default</string>
+    <string name="settings_auto_shuffle_summary">Android Auto starts the shuffle list as soon as the Auto tab is opened and nothing is playing</string>
 </resources>
