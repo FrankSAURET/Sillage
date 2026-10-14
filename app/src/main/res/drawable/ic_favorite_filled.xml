@@ -1,10 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Icône Fluent Color (Microsoft, licence MIT), voir NOTICE-icones.md. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
     android:width="24dp"
     android:height="24dp"
-    android:tint="?attr/colorOnSurface"
-    android:viewportWidth="960"
-    android:viewportHeight="960">
-    <path
-        android:fillColor="@android:color/white"
-        android:pathData="M480,840L422,788Q321,697 255,631Q189,565 150,512.5Q111,460 95.5,416Q80,372 80,326Q80,232 143,169Q206,106 300,106Q352,106 399,128Q446,150 480,190Q514,150 561,128Q608,106 660,106Q754,106 817,169Q880,232 880,326Q880,372 864.5,416Q849,460 810,512.5Q771,565 705,631Q639,697 538,788L480,840Z" />
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+  <path
+      android:pathData="m12.82 5.58l-.821.822l-.823-.823a5.375 5.375 0 0 0-7.602 7.601l7.896 7.896a.75.75 0 0 0 1.06 0l7.902-7.897a5.38 5.38 0 0 0-7.612-7.6"
+      android:fillColor="#f97dbd" />
 </vector>

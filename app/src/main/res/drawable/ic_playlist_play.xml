@@ -1,11 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Icône Fluent Color (Microsoft, licence MIT), voir NOTICE-icones.md. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
     android:width="24dp"
     android:height="24dp"
-    android:autoMirrored="true"
-    android:tint="?attr/colorOnSurface"
-    android:viewportWidth="960"
-    android:viewportHeight="960">
-    <path
-        android:fillColor="@android:color/white"
-        android:pathData="M120,640L120,560L440,560L440,640L120,640ZM120,480L120,400L600,400L600,480L120,480ZM120,320L120,240L600,240L600,320L120,320ZM640,840L640,520L880,680L640,840Z" />
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+  <path
+      android:pathData="M6.25 3A3.25 3.25 0 0 0 3 6.25v11.5A3.25 3.25 0 0 0 6.25 21h11.5A3.25 3.25 0 0 0 21 17.75V6.25A3.25 3.25 0 0 0 17.75 3z"
+      android:fillColor="#0fafff" />
+  <path
+      android:pathData="M7.75 9.25a1 1 0 1 0 0-2a1 1 0 0 0 0 2m3.5-1.75a.75.75 0 0 0 0 1.5h5.5a.75.75 0 0 0 0-1.5zm0 3.75a.75.75 0 1 0 0 1.5h5.5a.75.75 0 1 0 0-1.5zm-.75 4.5c0 .414.336.75.75.75h5.5a.75.75 0 1 0 0-1.5h-5.5a.75.75 0 0 0-.75.75M8.75 12a1 1 0 1 0-2 0a1 1 0 0 0 2 0m-1 4.75a1 1 0 1 0 0-2a1 1 0 0 0 0 2"
+      android:fillColor="#ffffff" />
 </vector>

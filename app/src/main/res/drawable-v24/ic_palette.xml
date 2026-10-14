@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Icône Fluent Color (Microsoft, licence MIT), voir NOTICE-icones.md. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+  <path
+      android:pathData="M19 2.75a.75.75 0 0 0-.75-.75H5.75a.75.75 0 0 0-.75.75v9.75h14z">
+      <aapt:attr name="android:fillColor">
+        <gradient android:type="linear" android:startX="9.2" android:startY="-1.281" android:endX="15.448" android:endY="16.05">
+          <item android:offset="0.085" android:color="#ffcd0f" />
+          <item android:offset="0.991" android:color="#e67505" />
+        </gradient>
+      </aapt:attr>
+  </path>
+  <path
+      android:pathData="M5 12v2.252a2.25 2.25 0 0 0 2.25 2.25H10V20a2 2 0 1 0 4 0v-3.498h2.75a2.25 2.25 0 0 0 2.25-2.25V12z">
+      <aapt:attr name="android:fillColor">
+        <gradient android:type="linear" android:startX="5" android:startY="8.471" android:endX="5.857" android:endY="24.589">
+          <item android:offset="0.125" android:color="#ac80ff" />
+          <item android:offset="1" android:color="#5750e2" />
+        </gradient>
+      </aapt:attr>
+  </path>
+  <path
+      android:pathData="M5 12a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.5H5z">
+      <aapt:attr name="android:fillColor">
+        <gradient android:type="linear" android:startX="8.329" android:startY="11.199" android:endX="8.443" android:endY="12.891">
+          <item android:offset="0.125" android:color="#9c6cfe" />
+          <item android:offset="1" android:color="#5750e2" />
+        </gradient>
+      </aapt:attr>
+  </path>
+  <path
+      android:pathData="M12.5 5.252V2H14v3.252a.75.75 0 0 1-1.5 0">
+      <aapt:attr name="android:fillColor">
+        <gradient android:type="linear" android:startX="12.5" android:startY=".611" android:endX="16.548" android:endY="5.929">
+          <item android:offset="0" android:color="#ff921f" />
+          <item android:offset="1" android:color="#eb4824" />
+        </gradient>
+      </aapt:attr>
+  </path>
+  <path
+      android:pathData="M15 6.251V2h1.5v4.251a.75.75 0 0 1-1.5 0">
+      <aapt:attr name="android:fillColor">
+        <gradient android:type="linear" android:startX="12.5" android:startY=".611" android:endX="16.548" android:endY="5.929">
+          <item android:offset="0" android:color="#ff921f" />
+          <item android:offset="1" android:color="#eb4824" />
+        </gradient>
+      </aapt:attr>
+  </path>
+</vector>

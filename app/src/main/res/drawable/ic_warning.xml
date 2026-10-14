@@ -1,10 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Icône Fluent Color (Microsoft, licence MIT), voir NOTICE-icones.md. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
     android:width="24dp"
     android:height="24dp"
-    android:viewportWidth="960"
-    android:viewportHeight="960"
-    android:tint="?attr/colorControlNormal">
+    android:viewportWidth="24"
+    android:viewportHeight="24">
   <path
-      android:fillColor="@android:color/white"
-      android:pathData="M40,840L480,80L920,840L40,840ZM178,760L782,760L480,240L178,760ZM508.5,708.5Q520,697 520,680Q520,663 508.5,651.5Q497,640 480,640Q463,640 451.5,651.5Q440,663 440,680Q440,697 451.5,708.5Q463,720 480,720Q497,720 508.5,708.5ZM440,600L520,600L520,400L440,400L440,600ZM480,500L480,500L480,500Z"/>
+      android:pathData="M10.03 3.659c.856-1.548 3.081-1.548 3.937 0l7.746 14.001c.83 1.5-.255 3.34-1.969 3.34H4.254c-1.715 0-2.8-1.84-1.97-3.34z"
+      android:fillColor="#ffcd0f" />
+  <path
+      android:pathData="M12.997 17A.999.999 0 1 0 11 17a.999.999 0 0 0 1.997 0m-.259-7.852a.75.75 0 0 0-1.493.103l.004 4.501l.007.102a.75.75 0 0 0 1.493-.103l-.004-4.502z"
+      android:fillColor="#4a4a4a" />
 </vector>

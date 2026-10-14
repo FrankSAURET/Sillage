@@ -15,6 +15,7 @@
 
 ### Modification
 
+- Icônes colorées (Fluent Color de Microsoft, licence MIT, voir `NOTICE-icones.md`) pour les réglages, le dossier, les avertissements, le cœur plein, etc. ; les commandes de lecture gardent leur dessin.
 - Nouvelle allure : couleurs fixes bleues et violettes reprises du logo (au lieu des couleurs tirées du fond d'écran), coins peu arrondis, sans ombres. Les couleurs du lecteur ne suivent plus la jaquette par défaut (réglage « Lecteur » pour les rétablir).
 - Nouvelle icône : le logo de Frank (icône adaptative, monochrome, petite icône de notification et d'Android Auto, boîte « À propos »).
 - Nouveau nom et nouvelle icône ; plus aucune mention de Gramophone dans l'application, hors la page « À propos » qui indique l'origine du projet.

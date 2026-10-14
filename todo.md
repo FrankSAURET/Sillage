@@ -1,10 +1,13 @@
 # À faire
-1. Traduit tout 
 1. ⏳ Dans android auto, le bouton fleche en haut à gauche permet d'aller dans les paramètres et le bouton histogramme d'en revenir. Supprime ce bouton histogramme et fais en sorte que ce soit l'icone en haut à gauche qui permette de revenir — bloqué : cette barre est dessinée par Android Auto, le code de Sillage n'y ajoute aucun bouton « paramètres » ni « histogramme ». Il faut une capture d'écran de l'écran concerné (ou le nom exact du bouton) pour savoir lequel est visé.
-1. Modifie les icones à partir de celle de https://icon-sets.iconify.design/fluent-color/ Tu choisira des icones colorées le plus 3D possible, libres de droit (mais tu crédite les auteurs). Cette modification sera reversible simplement tant que je ne l'aurais pas validée
+1. ⏳ À valider par Frank : icônes Fluent Color (voir 32). Si refusé : `git revert` du commit « Icônes Fluent Color ».
 
 
 # 2026.10.0 (prochaine publication)
+
+32. ✅ Icônes colorées Fluent Color (Microsoft, MIT) : 22 icônes remplacées sous le même nom (réglages, dossier, avertissement, erreur, cœur plein, casque, palette, horloge, partage…). Couleurs unies dans `drawable/`, dégradés dans `drawable-v24/` (Android 7+). Crédits dans `NOTICE-icones.md`. Non remplacées : transport (lecture, pause, suivant…), bascules (répéter, aléatoire, favori vide), flèches, croix, coches. Une icône teintée par le thème perd ses couleurs. Ressources compilées (`processDebugResources`), rendu non vérifié sur appareil.
+33. ✅ Traduit tout : aucune chaîne absente de `values-fr`.
+34. ✅ Code des lots 25 à 31 compilé (`compileDebugKotlin`, JDK d'Android Studio : le JDK 18 du système est trop ancien, il faut le JDK 21).
 
 25. ✅ Effacement auto (Réglages > Comportement, catégorie renommée) : explication, « Effacer automatiquement », seuil, durée de « passé » (`skip_window`, 30 s à 4 min par pas de 30 s, 1 min par défaut), écran `SkipListSettingsActivity` à deux onglets (« À effacer », « Score positif ») avec remise à 0 par morceau, « Tout réinitialiser » par liste, « Effacer maintenant » (onglet « À effacer ») et « Réinitialiser tous les scores » dans les réglages. Non compilé.
 26. ℹ️ Effacement automatique : exécuté au démarrage de l'application (une fois par démarrage), pas en cours d'écoute : la suppression de fichiers a besoin de l'écran principal, et Android 11+ demande toujours sa confirmation.

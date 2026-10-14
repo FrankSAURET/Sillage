@@ -1,11 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Icône Fluent Color (Microsoft, licence MIT), voir NOTICE-icones.md. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
     android:width="24dp"
     android:height="24dp"
-    android:autoMirrored="true"
-    android:tint="?attr/colorOnSurface"
-    android:viewportWidth="960"
-    android:viewportHeight="960">
-    <path
-        android:fillColor="@android:color/white"
-        android:pathData="M280,680L560,680L560,600L280,600L280,680ZM280,520L680,520L680,440L280,440L280,520ZM280,360L680,360L680,280L280,280L280,360ZM200,840Q167,840 143.5,816.5Q120,793 120,760L120,200Q120,167 143.5,143.5Q167,120 200,120L760,120Q793,120 816.5,143.5Q840,167 840,200L840,760Q840,793 816.5,816.5Q793,840 760,840L200,840ZM200,760L760,760Q760,760 760,760Q760,760 760,760L760,200Q760,200 760,200Q760,200 760,200L200,200Q200,200 200,200Q200,200 200,200L200,760Q200,760 200,760Q200,760 200,760ZM200,200L200,200Q200,200 200,200Q200,200 200,200L200,760Q200,760 200,760Q200,760 200,760L200,760Q200,760 200,760Q200,760 200,760L200,200Q200,200 200,200Q200,200 200,200Z" />
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+  <path
+      android:pathData="M6 22h12a2 2 0 0 0 2-2V9l-5-2l-2-5H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2"
+      android:fillColor="#6ce0ff" />
+  <path
+      android:pathData="M6 22h12a2 2 0 0 0 2-2V9l-5-2l-2-5H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2"
+      android:fillAlpha=".5"
+      android:fillColor="#4a43cb" />
+  <path
+      android:pathData="M13 7.5V2l7 7h-5.5A1.5 1.5 0 0 1 13 7.5"
+      android:fillColor="#9ff0f9" />
+  <path
+      android:pathData="M8.75 11.5a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5zm0 2.75a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5zm0 2.75a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5z"
+      android:fillAlpha=".9"
+      android:fillColor="#9deaff" />
 </vector>
