@@ -1,8 +1,11 @@
 # À faire
-1. ℹ️ Android Auto : impossible côté Sillage. Sur la capture (14 octobre 2026), l'icône en haut à gauche est le logo de l'application et le bouton « histogramme » en bas à droite est le bouton « En cours de lecture » ; les deux sont dessinés et gérés par Android Auto, qui ne laisse à l'application ni les supprimer ni changer leur action. Seuls les onglets et leur contenu sont à Sillage.
 
 
 # 2026.10.0 (prochaine publication)
+
+39. ✅ Effacement auto : titre de catégorie (doublon bleu) et titre « Comment ça marche » supprimés ; l'explication garde l'icône info, comme dans Audio. Compilé, non vu sur appareil.
+
+40. ℹ️ Menu 3 points > Égaliseur : ouvre l'égaliseur du système Android (`AudioEffect.ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL`) pour la session audio en cours ; message « égaliseur introuvable » si l'appareil n'en a pas.
 
 38. ✅ Icônes Fluent Color / Fluent Emoji validées par Frank (14 octobre 2026).
 

@@ -18,67 +18,60 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory
-        android:layout="@layout/preference_category_md"
-        android:title="@string/settings_category_skip">
+    <Preference
+        android:icon="@drawable/ic_info"
+        android:key="skip_explain"
+        android:layout="@layout/preference_basic"
+        android:selectable="false"
+        android:summary="@string/settings_skip_explain_summary" />
 
-        <Preference
-            android:key="skip_explain"
-            android:layout="@layout/preference_basic"
-            android:selectable="false"
-            android:summary="@string/settings_skip_explain_summary"
-            android:title="@string/settings_skip_explain"
-            app:iconSpaceReserved="false" />
+    <SwitchPreferenceCompat
+        android:defaultValue="false"
+        android:key="skip_auto_delete"
+        android:layout="@layout/preference_switch"
+        android:summary="@string/settings_skip_auto_summary"
+        android:title="@string/settings_skip_auto"
+        android:widgetLayout="@layout/preference_switch_widget"
+        app:iconSpaceReserved="false" />
 
-        <SwitchPreferenceCompat
-            android:defaultValue="false"
-            android:key="skip_auto_delete"
-            android:layout="@layout/preference_switch"
-            android:summary="@string/settings_skip_auto_summary"
-            android:title="@string/settings_skip_auto"
-            android:widgetLayout="@layout/preference_switch_widget"
-            app:iconSpaceReserved="false" />
+    <SeekBarPreference
+        android:defaultValue="3"
+        android:key="skip_threshold"
+        android:layout="@layout/preference_seekbar"
+        android:max="10"
+        android:title="@string/settings_skip_threshold"
+        android:summary="@string/settings_skip_threshold_summary"
+        app:min="1"
+        app:iconSpaceReserved="false"
+        app:showSeekBarValue="true" />
 
-        <SeekBarPreference
-            android:defaultValue="3"
-            android:key="skip_threshold"
-            android:layout="@layout/preference_seekbar"
-            android:max="10"
-            android:title="@string/settings_skip_threshold"
-            android:summary="@string/settings_skip_threshold_summary"
-            app:min="1"
-            app:iconSpaceReserved="false"
-            app:showSeekBarValue="true" />
+    <ListPreference
+        android:defaultValue="60000"
+        android:entries="@array/skip_window_entries"
+        android:entryValues="@array/skip_window_values"
+        android:key="skip_window"
+        android:layout="@layout/preference_basic"
+        android:title="@string/settings_skip_window"
+        app:iconSpaceReserved="false"
+        app:useSimpleSummaryProvider="true" />
 
-        <ListPreference
-            android:defaultValue="60000"
-            android:entries="@array/skip_window_entries"
-            android:entryValues="@array/skip_window_values"
-            android:key="skip_window"
-            android:layout="@layout/preference_basic"
-            android:title="@string/settings_skip_window"
-            app:iconSpaceReserved="false"
-            app:useSimpleSummaryProvider="true" />
+    <Preference
+        android:key="skip_list_delete"
+        android:layout="@layout/preference_basic"
+        android:title="@string/settings_skip_list_delete"
+        app:iconSpaceReserved="false" />
 
-        <Preference
-            android:key="skip_list_delete"
-            android:layout="@layout/preference_basic"
-            android:title="@string/settings_skip_list_delete"
-            app:iconSpaceReserved="false" />
+    <Preference
+        android:key="skip_list_positive"
+        android:layout="@layout/preference_basic"
+        android:title="@string/settings_skip_list_positive"
+        app:iconSpaceReserved="false" />
 
-        <Preference
-            android:key="skip_list_positive"
-            android:layout="@layout/preference_basic"
-            android:title="@string/settings_skip_list_positive"
-            app:iconSpaceReserved="false" />
-
-        <Preference
-            android:key="skip_reset_all"
-            android:layout="@layout/preference_basic"
-            android:summary="@string/settings_skip_reset_all_summary"
-            android:title="@string/settings_skip_reset_all"
-            app:iconSpaceReserved="false" />
-
-    </PreferenceCategory>
+    <Preference
+        android:key="skip_reset_all"
+        android:layout="@layout/preference_basic"
+        android:summary="@string/settings_skip_reset_all_summary"
+        android:title="@string/settings_skip_reset_all"
+        app:iconSpaceReserved="false" />
 
 </PreferenceScreen>
