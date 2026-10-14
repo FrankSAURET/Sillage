@@ -26,7 +26,7 @@
         android:title="@string/settings_category_appearance" />
 
     <Preference
-        android:icon="@drawable/ic_play_arrow"
+        android:icon="@drawable/ic_setting_play"
         android:key="player"
         android:layout="@layout/preference_basic"
         android:summary="@string/settings_player_ui_summary"

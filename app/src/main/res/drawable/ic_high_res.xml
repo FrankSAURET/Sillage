@@ -1,10 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Icône Fluent Color (Microsoft, licence MIT), voir NOTICE-icones.md. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
     android:width="24dp"
     android:height="24dp"
-    android:tint="?attr/colorControlNormal"
-    android:viewportWidth="960"
-    android:viewportHeight="960">
-    <path
-        android:fillColor="@android:color/white"
-        android:pathData="M180 740h60v-80h24l36 80h60l-36-84q15-9 25.5-23.5T360 600v-40q0-25-17.5-42.5T300 500H180v240zm220 0h160v-60H460v-30h80v-60h-80v-30h100v-60H400v240zm200 0h140q17 0 28.5-11.5T780 700v-60q0-17-11.5-28.5T740 600h-80v-40h120v-60H640q-17 0-28.5 11.5T600 540v60q0 17 11.5 28.5T640 640h80v40H600v60zM240 600v-40h60v40h-60zm60-140h60v-90h60v90h60V220h-60v90h-60v-90h-60v240zm280 0h60V220h-60v240zM120 840q-33 0-56.5-23.5T40 760V200q0-33 23.5-56.5T120 120h720q33 0 56.5 23.5T920 200v560q0 33-23.5 56.5T840 840H120z" />
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+  <path
+      android:pathData="M6.254 16L12 15.469l5.754.531h.065a1 1 0 0 1 .35.064l3.126 1.172c.423.158.704.562.705 1.014H2c0-.451.28-.855.702-1.013l3.128-1.173A1 1 0 0 1 6.181 16z"
+      android:fillColor="#63686e" />
+  <path
+      android:pathData="M2.75 17.5a.75.75 0 0 0 0 1.5h18.5a.75.75 0 0 0 0-1.5z"
+      android:fillColor="#889096" />
+  <path
+      android:pathData="M4 6.25A2.25 2.25 0 0 1 6.25 4h11.5A2.25 2.25 0 0 1 20 6.25v7.5A2.25 2.25 0 0 1 17.75 16H6.25A2.25 2.25 0 0 1 4 13.75z"
+      android:fillColor="#6ce0ff" />
 </vector>

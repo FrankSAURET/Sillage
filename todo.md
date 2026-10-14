@@ -5,6 +5,8 @@
 
 # 2026.10.0 (prochaine publication)
 
+35. ✅ Icônes des réglages : toutes passées en couleur (Fluent Color / Fluent Emoji, MIT) ; la ligne « Lecteur » a sa propre icône `ic_setting_play`. Les ombres floues des Fluent Emoji et les traits seuls sont omis. Rendu non vérifié sur appareil.
+
 32. ✅ Icônes colorées Fluent Color (Microsoft, MIT) : 22 icônes remplacées sous le même nom (réglages, dossier, avertissement, erreur, cœur plein, casque, palette, horloge, partage…). Couleurs unies dans `drawable/`, dégradés dans `drawable-v24/` (Android 7+). Crédits dans `NOTICE-icones.md`. Non remplacées : transport (lecture, pause, suivant…), bascules (répéter, aléatoire, favori vide), flèches, croix, coches. Une icône teintée par le thème perd ses couleurs. Ressources compilées (`processDebugResources`), rendu non vérifié sur appareil.
 33. ✅ Traduit tout : aucune chaîne absente de `values-fr`.
 34. ✅ Code des lots 25 à 31 compilé (`compileDebugKotlin`, JDK d'Android Studio : le JDK 18 du système est trop ancien, il faut le JDK 21).

@@ -1,10 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Icône Fluent Color (Microsoft, licence MIT), voir NOTICE-icones.md. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
     android:width="24dp"
     android:height="24dp"
-    android:tint="?attr/colorOnSurface"
-    android:viewportWidth="960"
-    android:viewportHeight="960">
-    <path
-        android:fillColor="@android:color/white"
-        android:pathData="M346,820L100,574Q90,564 85,552Q80,540 80,527Q80,514 85,502Q90,490 100,480L330,251L224,145L286,80L686,480Q696,490 700.5,502Q705,514 705,527Q705,540 700.5,552Q696,564 686,574L440,820Q430,830 418,835Q406,840 393,840Q380,840 368,835Q356,830 346,820ZM393,314L179,528Q179,528 179,528Q179,528 179,528L607,528Q607,528 607,528Q607,528 607,528L393,314ZM792,840Q756,840 731,814.5Q706,789 706,752Q706,725 719.5,701Q733,677 750,654L792,600L836,654Q852,677 866,701Q880,725 880,752Q880,789 854,814.5Q828,840 792,840Z" />
+    android:viewportWidth="32"
+    android:viewportHeight="32">
+  <path
+      android:pathData="M22.053 6.114C15.279 2.734 7.25 4.039 3.592 9.95S2.263 23.73 8.799 27.523c3.211 1.863 8.395 3.766 10.501 1.228c2.065-2.486-.98-4.06-.27-5.437c1.144-2.213 6.262.69 9.61-2.887c3.771-4.034.008-11.021-6.587-14.313m2.027 12.991c-1.763 0-3.03-1.258-3.03-2.965s1.267-2.964 3.03-2.964s3.03 1.258 3.03 2.964c0 1.707-1.268 2.965-3.03 2.965"
+      android:fillColor="#ffb9a1" />
+  <path
+      android:pathData="M14.39 11.281a2.25 2.25 0 1 0 0-4.5a2.25 2.25 0 0 0 0 4.5"
+      android:fillColor="#cc67f1" />
+  <path
+      android:pathData="M8.39 15.281a2.25 2.25 0 1 0 0-4.5a2.25 2.25 0 0 0 0 4.5"
+      android:fillColor="#f9399f" />
+  <path
+      android:pathData="M8.39 22.281a2.25 2.25 0 1 0 0-4.5a2.25 2.25 0 0 0 0 4.5"
+      android:fillColor="#47cfa8" />
+  <path
+      android:pathData="M13.89 26.781a2.25 2.25 0 1 0 0-4.5a2.25 2.25 0 0 0 0 4.5"
+      android:fillColor="#49b1f1" />
 </vector>
