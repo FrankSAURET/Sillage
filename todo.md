@@ -1,5 +1,5 @@
 # À faire
-1. ⏳ Dans android auto, le bouton fleche en haut à gauche permet d'aller dans les paramètres et le bouton histogramme d'en revenir. Supprime ce bouton histogramme et fais en sorte que ce soit l'icone en haut à gauche qui permette de revenir — bloqué : cette barre est dessinée par Android Auto, le code de Sillage n'y ajoute aucun bouton « paramètres » ni « histogramme ». Il faut une capture d'écran de l'écran concerné (ou le nom exact du bouton) pour savoir lequel est visé.
+1. ℹ️ Android Auto : impossible côté Sillage. Sur la capture (14 octobre 2026), l'icône en haut à gauche est le logo de l'application et le bouton « histogramme » en bas à droite est le bouton « En cours de lecture » ; les deux sont dessinés et gérés par Android Auto, qui ne laisse à l'application ni les supprimer ni changer leur action. Seuls les onglets et leur contenu sont à Sillage.
 
 
 # 2026.10.0 (prochaine publication)
