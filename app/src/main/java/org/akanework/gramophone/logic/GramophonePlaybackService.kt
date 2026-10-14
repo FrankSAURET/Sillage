@@ -124,6 +124,7 @@ import org.akanework.gramophone.logic.utils.BtCodecInfo
 import org.akanework.gramophone.logic.utils.CircularShuffleOrder
 import org.akanework.gramophone.logic.utils.Flags
 import org.akanework.gramophone.logic.utils.LastPlayedManager
+import org.akanework.gramophone.logic.utils.SkipNotifier
 import org.akanework.gramophone.logic.utils.SkipScores
 import org.akanework.gramophone.logic.utils.LrcUtils.LrcParserOptions
 import org.akanework.gramophone.logic.utils.LrcUtils.extractAndParseLyrics
@@ -1899,9 +1900,21 @@ class GramophonePlaybackService : MediaLibraryService(), MediaSessionService.Lis
                     Player.REPEAT_MODE_ALL else player.repeatMode
                 val next = player.currentTimeline.getNextWindowIndex(
                     oldPosition.mediaItemIndex, repeat, player.shuffleModeEnabled)
-                if (newPosition.mediaItemIndex == next) SkipScores.add(this, path, 1)
+                if (newPosition.mediaItemIndex == next) {
+                    SkipScores.add(this, path, 1)
+                    notifySkipReview()
+                }
             }
         }
+    }
+
+    /** Sillage : prévient quand la liste des morceaux à effacer gagne 10 morceaux, sauf sous Android Auto. */
+    private fun notifySkipReview() {
+        val session = mediaSession ?: return
+        val inCar = session.connectedControllers.any {
+            session.isAutoCompanionController(it) || session.isAutomotiveController(it)
+        }
+        CoroutineScope(Dispatchers.Default).launch { SkipNotifier.check(this@GramophonePlaybackService, inCar) }
     }
 
     var lastKnownPeriodUid: Any? = null // TODO: file upstream bug, maybe? this seems a bit weird

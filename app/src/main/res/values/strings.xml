@@ -1324,6 +1324,10 @@ supporting local search. This string is displayed in the search bar when using G
     <string name="settings_skip_reset_all">Reset all scores</string>
     <string name="settings_skip_reset_all_summary">Sets the score of every song back to 0</string>
     <string name="settings_skip_reset_all_confirm">Set the score of every song back to 0?</string>
+    <string name="skip_notification_channel">Songs to delete</string>
+    <string name="skip_notification_title">Songs to delete</string>
+    <string name="skip_notification_text">%1$d often skipped songs can be deleted. Tap to review them.</string>
+    <string name="dialog_skip_score">Deletion score</string>
     <string name="skip_list_to_delete">To delete</string>
     <string name="skip_list_positive">Positive score</string>
     <string name="skip_list_reset">Reset to 0</string>

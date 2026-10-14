@@ -552,6 +552,10 @@
     <string name="settings_skip_reset_all">Réinitialiser tous les scores</string>
     <string name="settings_skip_reset_all_summary">Remet à 0 le score de tous les morceaux</string>
     <string name="settings_skip_reset_all_confirm">Remettre à 0 le score de tous les morceaux ?</string>
+    <string name="skip_notification_channel">Morceaux à effacer</string>
+    <string name="skip_notification_title">Morceaux à effacer</string>
+    <string name="skip_notification_text">%1$d morceaux souvent passés peuvent être effacés. Touchez pour les examiner.</string>
+    <string name="dialog_skip_score">Score d’effacement</string>
     <string name="skip_list_to_delete">À effacer</string>
     <string name="skip_list_positive">Score positif</string>
     <string name="skip_list_reset">Remettre à 0</string>

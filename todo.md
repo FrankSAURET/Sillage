@@ -1,8 +1,6 @@
 # À faire
-1. Dans les propriétés d'une chanson, afficher son  score d'effacement et la possibilité de le réinitialiser
 1. Traduit tout 
-1. Ajoute une notification à chaque fois qu'il y a 10 morceaux de plus dans la liste à effacer (10, 20, 30...) . Mais cette notification en doit jamais apparaitre pendant qu'android auto est utilisé
-1. Dans android auto, le bouton fleche en haut à gauche permet d'aller dans les paramètres et le bouton histogramme d'en revenir. Supprime ce bouton histogramme et fais en sorte que ce soit l'icone en haut à gauche qui permette de revenir
+1. ⏳ Dans android auto, le bouton fleche en haut à gauche permet d'aller dans les paramètres et le bouton histogramme d'en revenir. Supprime ce bouton histogramme et fais en sorte que ce soit l'icone en haut à gauche qui permette de revenir — bloqué : cette barre est dessinée par Android Auto, le code de Sillage n'y ajoute aucun bouton « paramètres » ni « histogramme ». Il faut une capture d'écran de l'écran concerné (ou le nom exact du bouton) pour savoir lequel est visé.
 1. Modifie les icones à partir de celle de https://icon-sets.iconify.design/fluent-color/ Tu choisira des icones colorées le plus 3D possible, libres de droit (mais tu crédite les auteurs). Cette modification sera reversible simplement tant que je ne l'aurais pas validée
 
 
@@ -12,6 +10,8 @@
 26. ℹ️ Effacement automatique : exécuté au démarrage de l'application (une fois par démarrage), pas en cours d'écoute : la suppression de fichiers a besoin de l'écran principal, et Android 11+ demande toujours sa confirmation.
 27. ✅ Score confirmé par le code (`updateSkipScore`, GramophonePlaybackService) : fin naturelle du morceau = −1 ; « suivant » avant la durée réglée = +1 ; « précédent » ou saut ailleurs = 0 ; « suivant » après la durée = 0. Un morceau écouté en entier et jamais passé a donc un score négatif.
 28. ✅ Un morceau en favori n'est jamais proposé ni effacé (`SkipReview.toDelete`) ; il reste visible dans la liste « Score positif ».
+30. ✅ Propriétés d'un morceau : ligne « Score d'effacement » avec bouton de remise à 0 (`DetailDialogFragment`, `fragment_info_song.xml`).
+31. ✅ Notification « Morceaux à effacer » à chaque palier de 10 morceaux dans la liste à effacer (`SkipNotifier`, canal `skipReview`). Jamais envoyée tant qu'Android Auto (ou une voiture) est connecté à la session : le palier reste en attente jusqu'à la prochaine vérification hors voiture. Inactive avec « Effacer automatiquement ». Toucher la notification ouvre la liste « À effacer ». Non compilé.
 29. ⏳ Chaînes ajoutées en anglais et en français seulement (autres langues absentes, comme avant).
 
 0. ✅ Android Auto : icône = logo de Frank (`mipmap-*` adaptatif, monochrome, anciens lanceurs ; petites icônes de notification en png ; fond `drawable/ic_launcher_bg.xml`, ambre en debug ; boîte « À propos » `ic_logo.webp`). Premier onglet « Auto » avec l'élément « Liste aléatoire » (`shuffle_all`) qui lance toute la bibliothèque en aléatoire perpétuel. Réglage Comportement `auto_shuffle` : lance la liste dès l'ouverture de l'onglet Auto, une fois par connexion, si rien n'est en lecture. File renommée « Liste aléatoire » ; un morceau joué ou passé en sort (`removeFromPerpetualQueue`), liste refaite quand il n'en reste qu'un. Non compilé.

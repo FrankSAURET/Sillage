@@ -44,6 +44,7 @@ import org.akanework.gramophone.logic.toLocaleString
 import org.akanework.gramophone.logic.toMediaStoreId
 import org.akanework.gramophone.logic.ui.placeholderScaleToFit
 import org.akanework.gramophone.logic.utils.CalculationUtils.convertDurationToTimeStamp
+import org.akanework.gramophone.logic.utils.SkipScores
 
 class DetailDialogFragment : BaseFragment(false) {
 
@@ -106,6 +107,21 @@ class DetailDialogFragment : BaseFragment(false) {
         pathTextView.text = mediaItem.getFile()?.path
             ?: mediaItem.requestMetadata.mediaUri?.toString() ?: "(null)"
         val context = requireContext().applicationContext
+        // Sillage : score d'effacement du morceau, remis à 0 d'un toucher
+        val skipPath = mediaItem.getFile()?.path
+        val skipScoreTextView = rootView.findViewById<TextView>(R.id.skip_score)
+        val skipResetButton = rootView.findViewById<View>(R.id.skip_score_reset)
+        fun showSkipScore() {
+            val score = skipPath?.let { SkipScores.all(context)[it] } ?: 0
+            skipScoreTextView.text = if (score > 0) "+$score" else score.toString()
+            skipResetButton.isEnabled = score != 0
+            skipResetButton.alpha = if (score != 0) 1f else 0.38f
+        }
+        showSkipScore()
+        skipResetButton.setOnClickListener {
+            skipPath?.let { SkipScores.reset(context, listOf(it)) }
+            showSkipScore()
+        }
         CoroutineScope(Dispatchers.IO).launch {
             val bitrate = mediaItem.getBitrate(context) // disk access
             withContext(Dispatchers.Main) {

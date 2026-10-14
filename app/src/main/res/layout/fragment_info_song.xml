@@ -441,6 +441,52 @@
 
             </LinearLayout>
 
+            <!-- Sillage : score d'effacement du morceau -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/dialog_skip_score"
+                    android:textColor="?colorPrimary"
+                    android:textSize="17sp"
+                    app:textFontWeight="500" />
+
+                <TextView
+                    android:id="@+id/skip_score"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:gravity="end"
+                    android:textColor="?colorOnSurface"
+                    android:textSize="16sp"
+                    app:textFontWeight="500"
+                    tools:text="2" />
+
+                <ImageButton
+                    android:id="@+id/skip_score_reset"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/skip_list_reset"
+                    android:src="@drawable/ic_refresh"
+                    app:tint="?colorOnSurface"
+                    app:tooltipText="@string/skip_list_reset" />
+
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
