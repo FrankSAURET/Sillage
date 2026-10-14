@@ -5,6 +5,8 @@
 
 # 2026.10.0 (prochaine publication)
 
+37. ✅ Icônes des réglages : la teinte `colorOnSurface` de `layout/preference_icon.xml` aplatissait toutes les icônes en une couleur ; retirée, les couleurs Fluent s'affichent. Compilé, non vérifié sur appareil.
+
 36. ✅ « Effacement auto » est une entrée à la racine des paramètres (`SkipSettingsActivity`, `settings_skip.xml`, icône corbeille `ic_delete_auto`) ; retirée de Comportement. Compilé, non testé sur appareil.
 
 35. ✅ Icônes des réglages : toutes passées en couleur (Fluent Color / Fluent Emoji, MIT) ; la ligne « Lecteur » a sa propre icône `ic_setting_play`. Les ombres floues des Fluent Emoji et les traits seuls sont omis. Rendu non vérifié sur appareil.
