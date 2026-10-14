@@ -1,9 +1,10 @@
 # À faire
 1. ⏳ Dans android auto, le bouton fleche en haut à gauche permet d'aller dans les paramètres et le bouton histogramme d'en revenir. Supprime ce bouton histogramme et fais en sorte que ce soit l'icone en haut à gauche qui permette de revenir — bloqué : cette barre est dessinée par Android Auto, le code de Sillage n'y ajoute aucun bouton « paramètres » ni « histogramme ». Il faut une capture d'écran de l'écran concerné (ou le nom exact du bouton) pour savoir lequel est visé.
-1. ⏳ À valider par Frank : icônes Fluent Color (voir 32). Si refusé : `git revert` du commit « Icônes Fluent Color ».
 
 
 # 2026.10.0 (prochaine publication)
+
+38. ✅ Icônes Fluent Color / Fluent Emoji validées par Frank (14 octobre 2026).
 
 37. ✅ Icônes des réglages : la teinte `colorOnSurface` de `layout/preference_icon.xml` aplatissait toutes les icônes en une couleur ; retirée, les couleurs Fluent s'affichent. Compilé, non vérifié sur appareil.
 
