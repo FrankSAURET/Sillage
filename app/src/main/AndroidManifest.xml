@@ -308,6 +308,10 @@
             android:exported="false" />
 
         <activity
+            android:name=".ui.fragments.settings.SkipSettingsActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".ui.fragments.settings.MainSettingsActivity"
             android:exported="false" />
 

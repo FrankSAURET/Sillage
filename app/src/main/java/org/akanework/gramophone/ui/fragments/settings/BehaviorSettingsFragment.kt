@@ -22,17 +22,12 @@ import android.os.Bundle
 import android.provider.Settings
 import android.widget.Toast
 import androidx.core.net.toUri
-import androidx.lifecycle.lifecycleScope
 import androidx.preference.Preference
 import androidx.preference.SwitchPreferenceCompat
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import kotlinx.coroutines.launch
 import org.akanework.gramophone.R
 import org.akanework.gramophone.logic.hasImagePermission
 import org.akanework.gramophone.logic.hasScopedStorageWithMediaTypes
 import org.akanework.gramophone.logic.utils.Flags
-import org.akanework.gramophone.logic.utils.SkipScores
-import org.akanework.gramophone.ui.SkipReview
 import org.akanework.gramophone.ui.fragments.BasePreferenceFragment
 import org.akanework.gramophone.ui.fragments.BaseSettingsActivity
 
@@ -45,7 +40,6 @@ class BehaviorSettingsFragment : BasePreferenceFragment() {
 
     override fun onResume() {
         super.onResume()
-        refreshSkipCounts()
         if (hasScopedStorageWithMediaTypes()) {
             val preference = findPreference<SwitchPreferenceCompat>("album_covers")!!
             preference.isPersistent = false
@@ -56,18 +50,6 @@ class BehaviorSettingsFragment : BasePreferenceFragment() {
         }
     }
 
-    /** Sillage : nombre de morceaux dans chacune des deux listes de l'effacement auto. */
-    private fun refreshSkipCounts() {
-        viewLifecycleOwner.lifecycleScope.launch {
-            val all = SkipReview.load(requireContext())
-            findPreference<Preference>("skip_list_delete")?.summary = getString(
-                R.string.settings_skip_list_delete_summary,
-                SkipReview.toDelete(all, SkipScores.threshold(requireContext())).size)
-            findPreference<Preference>("skip_list_positive")?.summary = getString(
-                R.string.settings_skip_list_positive_summary, SkipReview.positive(all).size)
-        }
-    }
-
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.settings_behavior, rootKey)
     }
@@ -75,21 +57,6 @@ class BehaviorSettingsFragment : BasePreferenceFragment() {
     override fun onPreferenceTreeClick(preference: Preference): Boolean {
         if (preference.key == "blacklist") {
             startActivity(BlacklistSettingsActivity::class.java)
-        }
-        when (preference.key) {
-            "skip_list_delete" -> startActivity(SkipListSettingsActivity.intent(
-                requireContext(), SkipListSettingsActivity.TAB_TO_DELETE))
-            "skip_list_positive" -> startActivity(SkipListSettingsActivity.intent(
-                requireContext(), SkipListSettingsActivity.TAB_POSITIVE))
-            "skip_reset_all" -> MaterialAlertDialogBuilder(requireContext())
-                .setTitle(R.string.settings_skip_reset_all)
-                .setMessage(R.string.settings_skip_reset_all_confirm)
-                .setPositiveButton(R.string.settings_skip_reset_all) { _, _ ->
-                    SkipScores.resetAll(requireContext())
-                    refreshSkipCounts()
-                }
-                .setNegativeButton(android.R.string.cancel, null)
-                .show()
         }
         // Prior to Android 13, this changes a setting which changes MediaStoreUtils behaviour
         // Android 13 and later, this displays state of images permission granted/denied

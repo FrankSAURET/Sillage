@@ -538,6 +538,7 @@
     <string name="settings_always_skip_previous_summary">Passer directement au morceau précédent en appuyant sur le bouton précédent, au lieu de revenir au début du morceau</string>
     <!-- Sillage : score de skip et proposition d'effacement -->
     <string name="settings_category_skip">Effacement auto</string>
+    <string name="settings_skip_summary">Score de skip, morceaux à effacer, seuil</string>
     <string name="settings_skip_explain">Comment ça marche</string>
     <string name="settings_skip_explain_summary">Chaque morceau a un score. Le passer avant la durée réglée ajoute 1 ; l’écouter jusqu’au bout retire 1. Les morceaux qui atteignent le seuil vous sont proposés à l’effacement, sauf ceux de vos favoris.</string>
     <string name="settings_skip_auto">Effacer automatiquement</string>

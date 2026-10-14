@@ -42,6 +42,10 @@ class MainSettingsFragment : BasePreferenceFragment() {
                 startActivity(BehaviorSettingsActivity::class.java)
             }
 
+            "skip" -> {
+                startActivity(SkipSettingsActivity::class.java)
+            }
+
             "about" -> {
                 startActivity(AboutSettingsActivity::class.java)
             }
