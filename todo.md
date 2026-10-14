@@ -1,14 +1,18 @@
 # À faire
-1. ⬜ Tester le logo de Frank en icône (non compilé) : lanceur, icône à thème Android 13+, notification, Android Auto (désinstaller puis réinstaller si l'ancienne icône reste en cache) ; dire si le motif est trop petit ou trop grand dans le cercle.
-1. ⬜ Tester Android Auto (non compilé) : onglet « Auto » en premier avec « Liste aléatoire » ; réglage Comportement > « Lancer la liste aléatoire par défaut » ; vérifier qu'un morceau joué ou passé disparaît de la file.
-1. ⬜ Tester la liste aléatoire perpétuelle (non compilée) : menu « Nouvelle liste aléatoire », puis aller au dernier morceau de la file et vérifier qu'une nouvelle liste démarre sans couper le morceau.
-1. ⬜ Bouton « efface ce morceau » dans Android Auto.
-
-
-1. ⏳ Autres langues que l'anglais et le français : les textes modifiés pour Sillage (rapport de plantage, dossiers racines, type de paquet) y sont retirés et s'affichent en anglais.
+1. Dans les propriétés d'une chanson, afficher son  score d'effacement et la possibilité de le réinitialiser
+1. Traduit tout 
+1. Ajoute une notification à chaque fois qu'il y a 10 morceaux de plus dans la liste à effacer (10, 20, 30...) . Mais cette notification en doit jamais apparaitre pendant qu'android auto est utilisé
+1. Dans android auto, le bouton fleche en haut à gauche permet d'aller dans les paramètres et le bouton histogramme d'en revenir. Supprime ce bouton histogramme et fais en sorte que ce soit l'icone en haut à gauche qui permette de revenir
+1. Modifie les icones à partir de celle de https://icon-sets.iconify.design/fluent-color/ Tu choisira des icones colorées le plus 3D possible, libres de droit (mais tu crédite les auteurs). Cette modification sera reversible simplement tant que je ne l'aurais pas validée
 
 
 # 2026.10.0 (prochaine publication)
+
+25. ✅ Effacement auto (Réglages > Comportement, catégorie renommée) : explication, « Effacer automatiquement », seuil, durée de « passé » (`skip_window`, 30 s à 4 min par pas de 30 s, 1 min par défaut), écran `SkipListSettingsActivity` à deux onglets (« À effacer », « Score positif ») avec remise à 0 par morceau, « Tout réinitialiser » par liste, « Effacer maintenant » (onglet « À effacer ») et « Réinitialiser tous les scores » dans les réglages. Non compilé.
+26. ℹ️ Effacement automatique : exécuté au démarrage de l'application (une fois par démarrage), pas en cours d'écoute : la suppression de fichiers a besoin de l'écran principal, et Android 11+ demande toujours sa confirmation.
+27. ✅ Score confirmé par le code (`updateSkipScore`, GramophonePlaybackService) : fin naturelle du morceau = −1 ; « suivant » avant la durée réglée = +1 ; « précédent » ou saut ailleurs = 0 ; « suivant » après la durée = 0. Un morceau écouté en entier et jamais passé a donc un score négatif.
+28. ✅ Un morceau en favori n'est jamais proposé ni effacé (`SkipReview.toDelete`) ; il reste visible dans la liste « Score positif ».
+29. ⏳ Chaînes ajoutées en anglais et en français seulement (autres langues absentes, comme avant).
 
 0. ✅ Android Auto : icône = logo de Frank (`mipmap-*` adaptatif, monochrome, anciens lanceurs ; petites icônes de notification en png ; fond `drawable/ic_launcher_bg.xml`, ambre en debug ; boîte « À propos » `ic_logo.webp`). Premier onglet « Auto » avec l'élément « Liste aléatoire » (`shuffle_all`) qui lance toute la bibliothèque en aléatoire perpétuel. Réglage Comportement `auto_shuffle` : lance la liste dès l'ouverture de l'onglet Auto, une fois par connexion, si rien n'est en lecture. File renommée « Liste aléatoire » ; un morceau joué ou passé en sort (`removeFromPerpetualQueue`), liste refaite quand il n'en reste qu'un. Non compilé.
 1. ✅ Allure : thème retouché sans Material You — palette fixe générée avec materialyoucolor depuis le bleu du logo (#1F6BD1) et son violet (#A972EB) en tertiaire, coins 4/8 dp, ombres retirées, couleurs selon la jaquette désactivées par défaut.

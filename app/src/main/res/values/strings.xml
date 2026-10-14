@@ -1309,16 +1309,32 @@ supporting local search. This string is displayed in the search bar when using G
     <!-- Option to enable reordering mode for items in a list -->
     <string name="edit_mode">Enter edit mode</string>
     <!-- Sillage : score de skip et proposition d'effacement -->
-    <string name="settings_category_skip">Often skipped songs</string>
+    <string name="settings_category_skip">Auto delete</string>
+    <string name="settings_skip_explain">How it works</string>
+    <string name="settings_skip_explain_summary">Every song has a score. Skipping it before the set duration adds 1; listening to it to the end removes 1. Songs reaching the threshold are offered for deletion, except your favorites.</string>
+    <string name="settings_skip_auto">Delete automatically</string>
+    <string name="settings_skip_auto_summary">Deletes the songs reaching the threshold without asking, each time the app starts (Android still asks you to confirm)</string>
     <string name="settings_skip_threshold">Deletion threshold</string>
-    <string name="settings_skip_threshold_summary">Skipping a song in its first minute adds 1, listening to the end removes 1. Songs reaching this score are offered for deletion.</string>
-    <string name="settings_skip_review">Review now</string>
-    <string name="settings_skip_review_summary">Songs reaching the threshold: %1$d</string>
+    <string name="settings_skip_threshold_summary">Songs reaching this score are offered for deletion.</string>
+    <string name="settings_skip_window">A song counts as skipped before</string>
+    <string name="settings_skip_list_delete">Songs to delete</string>
+    <string name="settings_skip_list_delete_summary">Songs reaching the threshold: %1$d</string>
+    <string name="settings_skip_list_positive">Songs with a positive score</string>
+    <string name="settings_skip_list_positive_summary">Songs with a positive score: %1$d</string>
+    <string name="settings_skip_reset_all">Reset all scores</string>
+    <string name="settings_skip_reset_all_summary">Sets the score of every song back to 0</string>
+    <string name="settings_skip_reset_all_confirm">Set the score of every song back to 0?</string>
+    <string name="skip_list_to_delete">To delete</string>
+    <string name="skip_list_positive">Positive score</string>
+    <string name="skip_list_reset">Reset to 0</string>
+    <string name="skip_list_reset_all">Reset all</string>
+    <string name="skip_list_reset_all_confirm">Set the score of every song in this list back to 0?</string>
+    <string name="skip_list_delete_now">Delete now</string>
+    <string name="skip_list_empty">No songs in this list</string>
     <string name="skip_review_title">Delete often skipped songs?</string>
     <string name="skip_review_item">%1$s – %2$s (score %3$d)</string>
     <string name="skip_review_keep">Keep</string>
     <string name="skip_review_later">Later</string>
-    <string name="skip_review_none">No song reaches the threshold</string>
     <string name="perpetual_shuffle">Shuffle list</string>
     <string name="auto_tab">Auto</string>
     <string name="settings_auto_shuffle">Start the shuffle list by default</string>

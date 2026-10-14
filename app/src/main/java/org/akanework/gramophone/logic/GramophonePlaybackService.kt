@@ -1892,7 +1892,7 @@ class GramophonePlaybackService : MediaLibraryService(), MediaSessionService.Lis
             Player.DISCONTINUITY_REASON_AUTO_TRANSITION -> SkipScores.add(this, path, -1)
             Player.DISCONTINUITY_REASON_SEEK, Player.DISCONTINUITY_REASON_SKIP -> {
                 if (oldPosition.mediaItemIndex == newPosition.mediaItemIndex ||
-                    oldPosition.positionMs >= SkipScores.SKIP_WINDOW_MS) return
+                    oldPosition.positionMs >= SkipScores.windowMs(this)) return
                 val player = endedWorkaroundPlayer ?: return
                 // « suivant » en répéter-un passe quand même au morceau d'après
                 val repeat = if (player.repeatMode == Player.REPEAT_MODE_ONE)

@@ -6,7 +6,7 @@
 
 - Première version de Sillage, lecteur de musique hors ligne dérivé de Gramophone.
 - Aléatoire perpétuel : au premier lancement, tous vos morceaux sont mis en file d'attente en ordre aléatoire. La liste est conservée d'un lancement à l'autre ; quand son dernier morceau commence, elle est refaite à partir de toute la bibliothèque (nouveaux fichiers, morceaux effacés et dossiers exclus pris en compte). Le menu « Nouvelle liste aléatoire » la refait à la demande.
-- Morceaux souvent passés : chaque morceau passé dans sa première minute gagne un point, chaque écoute complète en retire un. Au-delà d'un seuil réglable (3 par défaut), Sillage vous propose de l'effacer.
+- Effacement auto : chaque morceau passé avant une durée réglable (1 minute par défaut, de 30 secondes à 4 minutes) gagne un point, chaque écoute complète en retire un. Au-delà d'un seuil réglable (3 par défaut), Sillage vous propose de l'effacer, sauf si le morceau est en favori. Réglages > Comportement > Effacement auto : effacement sans proposition, liste des morceaux à effacer, liste des morceaux à score positif (remise à zéro morceau par morceau ou liste entière) et remise à zéro de tous les scores.
 - Rapport de plantage : un bouton ouvre un ticket GitHub pré-rempli sur le dépôt de Sillage, le journal complet est copié pour être collé.
 - Android Auto : le premier onglet, « Auto », contient la « Liste aléatoire » ; la toucher lance toute la bibliothèque en aléatoire perpétuel. Réglage Comportement > « Lancer la liste aléatoire par défaut » : elle démarre dès l'ouverture de l'onglet Auto si rien n'est en lecture.
 - Liste aléatoire : un morceau joué ou passé sort de la liste ; quand il n'en reste qu'un, la liste est refaite à partir de toute la bibliothèque.

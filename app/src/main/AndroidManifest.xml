@@ -324,6 +324,10 @@
             android:exported="false" />
 
         <activity
+            android:name=".ui.fragments.settings.SkipListSettingsActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".ui.fragments.settings.OssLicensesSettingsActivity"
             android:exported="false" />
 

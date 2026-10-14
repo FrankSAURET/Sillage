@@ -29,11 +29,27 @@ import androidx.preference.PreferenceManager
 object SkipScores {
     private const val PREFS_NAME = "skip_scores"
     const val KEY_THRESHOLD = "skip_threshold"
+    const val KEY_WINDOW = "skip_window"
+    const val KEY_AUTO_DELETE = "skip_auto_delete"
     const val DEFAULT_THRESHOLD = 3
-    const val SKIP_WINDOW_MS = 60_000L
+    const val DEFAULT_WINDOW_MS = 60_000L
 
     private fun prefs(context: Context) =
         context.applicationContext.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+
+    private fun settings(context: Context) =
+        PreferenceManager.getDefaultSharedPreferences(context.applicationContext)
+
+    /** Durée d'écoute en dessous de laquelle un morceau passé compte comme « passé ». */
+    fun windowMs(context: Context): Long =
+        settings(context).getString(KEY_WINDOW, null)?.toLongOrNull() ?: DEFAULT_WINDOW_MS
+
+    fun autoDelete(context: Context): Boolean =
+        settings(context).getBoolean(KEY_AUTO_DELETE, false)
+
+    fun resetAll(context: Context) {
+        prefs(context).edit { clear() }
+    }
 
     fun add(context: Context, path: String, delta: Int) {
         val p = prefs(context)
@@ -50,6 +66,5 @@ object SkipScores {
         prefs(context).all.mapNotNull { (k, v) -> (v as? Int)?.let { k to it } }.toMap()
 
     fun threshold(context: Context): Int =
-        PreferenceManager.getDefaultSharedPreferences(context.applicationContext)
-            .getInt(KEY_THRESHOLD, DEFAULT_THRESHOLD)
+        settings(context).getInt(KEY_THRESHOLD, DEFAULT_THRESHOLD)
 }
